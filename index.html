@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>医院就医导航小程序</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 页面1: 就诊取号方式 -->
+    <div id="page1" class="page active">
+        <div class="container">
+            <div class="header">
+                <h1>就医导航</h1>
+                <p class="subtitle">请选择您的就诊取号方式</p>
+            </div>
+            
+            <div class="card">
+                <h2 class="section-title">就诊取号方式</h2>
+                <div class="button-group">
+                    <button class="btn-primary" onclick="selectPaymentMethod('身份证')">
+                        <span class="icon">🪪</span>
+                        <span>身份证</span>
+                    </button>
+                    <button class="btn-primary" onclick="selectPaymentMethod('社保')">
+                        <span class="icon">💳</span>
+                        <span>社保</span>
+                    </button>
+                    <button class="btn-primary" onclick="selectPaymentMethod('电子医保')">
+                        <span class="icon">📱</span>
+                        <span>电子医保</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 电子医保码调取路径 -->
+            <div id="medicalInsurance" class="card info-card" style="display: none;">
+                <h2 class="section-title">电子医保码调取路径</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            微信搜索"国家医保"小程序，点击进入。
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            点击右下角"我的"，授权登录。
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            登录成功，点击首页右上角二维码图片，生成医保码，可扫码使用。
+                        </div>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="./images/img1.png" alt="国家医保服务平台界面" class="guide-image">
+                </div>
+            </div>
+
+            <div class="card warning-card">
+                <h3>🔔 温馨提示</h3>
+                <p>请携带好既往就诊资料及影像资料（如有），并提前就诊时间30分钟到达医院，完成取号，等待就诊。</p>
+            </div>
+
+            <button class="btn-next" onclick="goToPage2()">下一步</button>
+        </div>
+    </div>
+
+    <!-- 页面2: 医院和科室选择 -->
+    <div id="page2" class="page">
+        <div class="container">
+            <div class="header">
+                <button class="btn-back" onclick="goToPage1()">← 返回</button>
+                <h1>选择就诊医院</h1>
+                <p class="subtitle">请选择您本次的既已就诊医院、就诊科室</p>
+            </div>
+
+            <div class="card">
+                <h2 class="section-title">医院选择</h2>
+                <div class="hospital-buttons">
+                    <button class="btn-hospital hospital-1" onclick="selectHospital('hospital1')">
+                        <span class="hospital-name">深圳市第二人民医院</span>
+                    </button>
+                    <button class="btn-hospital hospital-2" onclick="selectHospital('hospital2')">
+                        <span class="hospital-name">广州中医药大学深圳医院</span>
+                    </button>
+                    <button class="btn-hospital hospital-3" onclick="selectHospital('hospital3')">
+                        <span class="hospital-name">北京大学深圳医院</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 深圳市第二人民医院科室 -->
+            <div id="hospital1" class="hospital-departments" style="display: none;">
+                <div class="card">
+                    <h2 class="section-title">科室选择</h2>
+                    
+                    <div class="department-category">
+                        <h3 class="category-title">内科类</h3>
+                        <div class="department-list">
+                            <button class="btn-department" onclick="showDepartmentDetail('消化内科')">消化内科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('血液内科')">血液内科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('综合内科')">综合内科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('心血管内科')">心血管内科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('肾内科')">肾内科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('内分泌科')">内分泌科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('神经内科')">神经内科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('妇科')">妇科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('风湿免疫科')">风湿免疫科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('全科医学科')">全科医学科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('老年医学科')">老年医学科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('儿科')">儿科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('呼吸与危重学科')">呼吸与危重学科</button>
+                        </div>
+                    </div>
+
+                    <div class="department-category">
+                        <h3 class="category-title">外科类</h3>
+                        <div class="department-list">
+                            <button class="btn-department" onclick="showDepartmentDetail('神经外科')">神经外科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('肛肠外科')">肛肠外科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('泌尿外科')">泌尿外科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('烧伤科')">烧伤科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('创面修复科')">创面修复科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('整形美容科')">整形美容科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('皮肤科')">皮肤科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('耳鼻咽喉科')">耳鼻咽喉科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('口腔科')">口腔科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('肿瘤科')">肿瘤科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('产科')">产科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('针灸推拿科')">针灸推拿科</button>
+                        </div>
+                    </div>
+
+                    <div class="department-category">
+                        <h3 class="category-title">检查类</h3>
+                        <div class="department-list">
+                            <button class="btn-department" onclick="showDepartmentDetail('检验科')">检验科</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('门诊抽血室')">门诊抽血室</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('医学影像科(X光)')">医学影像科(X光)</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('医学影像科(CT)')">医学影像科(CT)</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('磁共振(MRI)')">磁共振(MRI)</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('超声科(B超)')">超声科(B超)</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('心电图')">心电图</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('动态心电图')">动态心电图</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('动态血压')">动态血压</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('肌电图')">肌电图</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('脑电图')">脑电图</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('TCD')">TCD</button>
+                        </div>
+                    </div>
+
+                    <div class="department-category">
+                        <h3 class="category-title">其他</h3>
+                        <div class="department-list">
+                            <button class="btn-department" onclick="showDepartmentDetail('用药咨询处')">用药咨询处</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('医保咨询处')">医保咨询处</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('客服中心')">客服中心</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('挂号收费处')">挂号收费处</button>
+                            <button class="btn-department" onclick="showDepartmentDetail('中/西医药房')">中/西医药房</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 广州中医药大学深圳医院科室 -->
+            <div id="hospital2" class="hospital-departments" style="display: none;">
+                <div class="card">
+                    <h2 class="section-title">科室选择</h2>
+                    
+                    <div class="department-category">
+                        <h3 class="category-title">内科类</h3>
+                        <div class="department-list">
+                            <button class="btn-department">内科</button>
+                            <button class="btn-department">全科医学科</button>
+                            <button class="btn-department">儿科</button>
+                            <button class="btn-department">妇科</button>
+                        </div>
+                    </div>
+
+                    <div class="department-category">
+                        <h3 class="category-title">外科类</h3>
+                        <div class="department-list">
+                            <button class="btn-department">骨伤科</button>
+                            <button class="btn-department">外科</button>
+                            <button class="btn-department">肛肠科</button>
+                            <button class="btn-department">皮肤科</button>
+                            <button class="btn-department">眼科</button>
+                            <button class="btn-department">耳鼻喉科</button>
+                            <button class="btn-department">口腔科</button>
+                            <button class="btn-department">产科</button>
+                        </div>
+                    </div>
+
+                    <div class="department-category">
+                        <h3 class="category-title">检查类</h3>
+                        <div class="department-list">
+                            <button class="btn-department">心电图</button>
+                            <button class="btn-department">脑电图</button>
+                            <button class="btn-department">肌电图</button>
+                            <button class="btn-department">TCD室(经颅多普勒超声)</button>
+                            <button class="btn-department">胃肠镜室</button>
+                        </div>
+                    </div>
+
+                    <div class="department-category">
+                        <h3 class="category-title">其他</h3>
+                        <div class="department-list">
+                            <button class="btn-department">药房</button>
+                            <button class="btn-department">挂号收费处</button>
+                            <button class="btn-department">客户服务中心</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 北京大学深圳医院科室 -->
+            <div id="hospital3" class="hospital-departments" style="display: none;">
+                <div class="card">
+                    <h2 class="section-title">科室选择</h2>
+                    
+                    <div class="department-category">
+                        <h3 class="category-title">内科类</h3>
+                        <div class="department-list">
+                            <button class="btn-department">内科</button>
+                            <button class="btn-department">神经内科</button>
+                            <button class="btn-department">妇科</button>
+                            <button class="btn-department">妇科内分泌科</button>
+                            <button class="btn-department">儿科</button>
+                            <button class="btn-department">营养门诊</button>
+                        </div>
+                    </div>
+
+                    <div class="department-category">
+                        <h3 class="category-title">外科类</h3>
+                        <div class="department-list">
+                            <button class="btn-department">外科</button>
+                            <button class="btn-department">泌尿外科</button>
+                            <button class="btn-department">眼科</button>
+                            <button class="btn-department">美容整形外科</button>
+                            <button class="btn-department">耳鼻咽喉科</button>
+                            <button class="btn-department">皮肤科</button>
+                        </div>
+                    </div>
+
+                    <div class="department-category">
+                        <h3 class="category-title">检查类</h3>
+                        <div class="department-list">
+                            <button class="btn-department">急诊CT/X线</button>
+                            <button class="btn-department">妇科超声室</button>
+                            <button class="btn-department">检验科</button>
+                            <button class="btn-department">生殖彩超室</button>
+                            <button class="btn-department">操作治疗区(抽血、换药、注射、雾化)</button>
+                        </div>
+                    </div>
+
+                    <div class="department-category">
+                        <h3 class="category-title">其他</h3>
+                        <div class="department-list">
+                            <button class="btn-department">门诊便民服务中心</button>
+                            <button class="btn-department">国际医疗部</button>
+                            <button class="btn-department">收费处</button>
+                            <button class="btn-department">中药房</button>
+                            <button class="btn-department">西药房</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页面3: 科室导航详情 -->
+    <div id="page3" class="page">
+        <div class="container">
+            <div class="header">
+                <button class="btn-back" onclick="goToPage2()">← 返回科室列表</button>
+                <h1 id="departmentTitle">科室导航</h1>
+            </div>
+
+            <div id="departmentDetail" class="card detail-card">
+                <!-- 动态内容将在这里加载 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
