@@ -1,148 +1,173 @@
 // 科室导航详情数据
 const departmentDetails = {
     '肛肠外科': {
-        images: ['./images/GangChang/img1.png', './images/GangChang/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.9gx1m1q0ru.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.9ddfobwy25.webp'],
         guide: '二楼电梯出口左转'
     },
     '烧伤科': {
-        images: ['./images/ShaoShang/img1.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.32ifqg8ocg.webp'],
         guide: '六楼电梯出口右转'
     },
     '整形美容科': {
-        images: ['./images/MeiRong/img1.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.32ifqg8ocg.webp'],
         guide: '六楼电梯出口左转'
     },
     '皮肤科': {
-        images: ['./images/PiFu/img1.png', './images/PiFu/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.73uf4udu7u.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.9o09hhdsuq.webp'],
         guide: '三楼电梯出口向左前方直行，后右转'
     },
     '儿科': {
-        images: ['./images/PiFu/img1.png', './images/PiFu/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.73uf4udu7u.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.9o09hhdsuq.webp'],
         guide: '三楼电梯出口向左前方直行，后右转'
     },
     '耳鼻咽喉科': {
-        images: ['./images/ErBi/img1.png', './images/ErBi/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.icldtaai2.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.13m9044qst.webp'],
         guide: '五楼电梯出口向左前方直行，后右转'
     },
     '口腔科': {
-        images: ['./images/KouQiang/img1.png', './images/KouQiang/img2.png', './images/KouQiang/img3.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.1e92t9kn0r.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.1ziqfkf3cn.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img3.3yex5wkloa.webp'],
         guide: '五楼电梯出口向左转为口腔一区，向右转为口腔二区'
     },
     '肿瘤科': {
-        images: ['./images/ZhongLiu/img1.png', './images/ZhongLiu/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.73uf4ufja6.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.77e12k8m01.webp'],
         guide: '四楼电梯出口右前方诊室'
     },
     '泌尿外科': {
-        images: ['./images/ZhongLiu/img1.png', './images/ZhongLiu/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.73uf4ufja6.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.77e12k8m01.webp'],
         guide: '四楼电梯出口右前方诊室'
     },
     '肾内科': {
-        images: ['./images/ZhongLiu/img1.png', './images/ZhongLiu/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.73uf4ufja6.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.77e12k8m01.webp'],
         guide: '四楼电梯出口右前方诊室'
     },
     '产科': {
-        images: ['./images/ChanKe/img1.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.2a5k8pv9wv.webp'],
         guide: '四楼电梯出口左侧诊室'
     },
     '针灸推拿科': {
-        images: ['./images/ZhenJiu/img1.png', './images/ZhenJiu/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.5c1g9xx2eb.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.8vndzqzs6e.webp'],
         guide: '三楼电梯出口右侧通道的左侧诊室'
     },
     '消化内科': {
-        images: ['./images/XiaoHua/img1.png', './images/XiaoHua/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.26lyb035fd.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.9kgnjrnt4s.webp'],
         guide: '二楼电梯出口左前方通道到底右转'
     },
     '血液内科': {
-        images: ['./images/XiaoHua/img1.png', './images/XiaoHua/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.26lyb035fd.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.9kgnjrnt4s.webp'],
         guide: '二楼电梯出口左前方通道到底右转'
     },
     '心血管内科': {
-        images: ['./images/XinXue/img1.png', './images/XinXue/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.32ifqgdc29.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.lw7bj6g5w.webp'],
         guide: '二楼电梯出口右前方诊室'
     },
     '心电图': {
-        images: ['./images/XinXue/img1.png', './images/XinXue/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.32ifqgdc29.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.lw7bj6g5w.webp'],
         guide: '二楼电梯出口右前方诊室'
     },
     '动态心电图': {
-        images: ['./images/XinXue/img1.png', './images/XinXue/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.32ifqgdc29.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.lw7bj6g5w.webp'],
         guide: '二楼电梯出口右前方诊室'
     },
     '动态血压': {
-        images: ['./images/XinXue/img1.png', './images/XinXue/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.32ifqgdc29.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.lw7bj6g5w.webp'],
         guide: '二楼电梯出口右前方诊室'
     },
     '呼吸与危重学科': {
-        images: ['./images/Huxi/img1.png', './images/Huxi/img2.png', './images/Huxi/img3.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.32ifqgdus2.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.7lkgtfjbq4.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img3.9rjvf7azhc.webp'],
         guide: '医院门诊楼正门进入后右转直行，左侧诊室'
     },
     '风湿免疫科': {
-        images: ['./images/Huxi/img1.png', './images/Huxi/img2.png', './images/Huxi/img3.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.32ifqgdus2.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.7lkgtfjbq4.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img3.9rjvf7azhc.webp'],
         guide: '医院门诊楼正门进入后右转直行，左侧诊室'
     },
     '老年医学科': {
-        images: ['./images/Huxi/img1.png', './images/Huxi/img2.png', './images/Huxi/img3.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.32ifqgdus2.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.7lkgtfjbq4.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img3.9rjvf7azhc.webp'],
         guide: '医院门诊楼正门进入后右转直行，左侧诊室'
     },
     '综合内科': {
-        images: ['./images/Huxi/img1.png', './images/Huxi/img2.png', './images/Huxi/img3.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.32ifqgdus2.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.7lkgtfjbq4.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img3.9rjvf7azhc.webp'],
         guide: '医院门诊楼正门进入后右转直行，左侧诊室'
     },
     '内分泌科': {
-        images: ['./images/NeiFenMi/img1.png', './images/NeiFenMi/img2.png', './images/NeiFenMi/img3.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.5j4o5dl9ux.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.8z6zxguwyx.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img3.39lnlw0jgq.webp'],
         guide: '四楼电梯出口右侧通道左侧诊室'
     },
     '神经内科': {
-        images: ['./images/ShenJingNei/img1.png', './images/ShenJingNei/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.2h8s45kgqj.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.83aii0lrki.webp'],
         guide: '四楼电梯出口左前方通道到底右转'
     },
     '神经外科': {
-        images: ['./images/ShenJingNei/img1.png', './images/ShenJingNei/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.2h8s45kgqj.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.83aii0lrki.webp'],
         guide: '四楼电梯出口左前方通道到底右转'
     },
     '脑电图': {
-        images: ['./images/ShenJingNei/img1.png', './images/ShenJingNei/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.2h8s45kgqj.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.83aii0lrki.webp'],
         guide: '四楼电梯出口左前方通道到底右转'
     },
     '肌电图': {
-        images: ['./images/ShenJingNei/img1.png', './images/ShenJingNei/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.2h8s45kgqj.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.83aii0lrki.webp'],
         guide: '四楼电梯出口左前方通道到底右转'
     },
     'TCD': {
-        images: ['./images/ShenJingNei/img1.png', './images/ShenJingNei/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.2h8s45kgqj.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.83aii0lrki.webp'],
         guide: '四楼电梯出口左前方通道到底右转'
     },
     '检验科': {
-        images: ['./images/JianYan/img1.png', './images/JianYan/img2.png', './images/JianYan/img3.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.1hsoqzi4v2.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.8z6zxgvvb3.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img3.491qz248xt.webp'],
         guide: '三楼电梯出口右侧通道到底右转'
     },
     '门诊抽血室': {
-        images: ['./images/MenZhenChouXue/img1.png', './images/MenZhenChouXue/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.7p42r5f9v3.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.6m4dg9jg0g.webp'],
         guide: '三楼电梯出口右侧通道右侧诊室'
     },
     '医学影像科(X光)': {
-        images: ['./images/XGuang/img1.png', './images/XGuang/img2.png', './images/XGuang/img3.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.1e92t9r37t.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.7zqwkav57a.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img3.9rjvf7ei4g.webp'],
         guide: '二楼电梯出口右侧通道到底'
     },
     '医学影像科(CT)': {
-        images: ['./images/CT/img1.png', './images/CT/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.9kgnjrstco.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.1apgvjyh7h.webp'],
         guide: '医院门诊楼正门进入直行左侧诊室'
     },
     '磁共振(MRI)': {
-        images: ['./images/MRI/img1.png', './images/MRI/img2.png', './images/MRI/img3.png', './images/MRI/img4.png', './images/MRI/img5.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.7snoov9vtw.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.6ikrijrwj0.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img3.3govhbqkc3.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img4.4n86pxfgxk.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img5.1ovwmf77ga.webp'],
         guide: '医院门诊楼正门进入直行至后门，步出门诊楼左转进入外科楼，乘坐右手侧扶梯至二楼后左转'
     },
     '超声科(B超)': {
-        images: ['./images/BChao/img1.png', './images/BChao/img2.png', './images/BChao/img3.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.icldt4mv0.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.2vf7v0ig2l.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img3.1ovwmetjhd.webp'],
         guide: '四楼电梯出口右侧通道到底'
     },
     '挂号收费处': {
-        images: ['./images/GuaHao/img1.png', './images/GuaHao/img2.png', './images/GuaHao/img3.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.4n86pxgehq.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.3rbpah6q2w.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img3.7prko40bc.webp'],
         guide: '医院门诊楼正门进入右侧为自助/人工挂号收费处'
     },
     '中/西医药房': {
-        images: ['./images/YaoFang/img1.png', './images/YaoFang/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img1.8s3s21e3fx.webp', 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/EBlog/Life/img2.1ovwmf8nwv.webp'],
         guide: '医院门诊楼正门进入步行，直行至通道十字交叉处右转'
+    },
+    // 其他科室 - 待完善
+    '创面修复科': {
+        images: [],
+        guide: '科室详细导航信息正在完善中，请咨询医院工作人员或查看医院导视牌。'
+    },
+    '妇科': {
+        images: [],
+        guide: '科室详细导航信息正在完善中，请咨询医院工作人员或查看医院导视牌。'
+    },
+    '全科医学科': {
+        images: [],
+        guide: '科室详细导航信息正在完善中，请咨询医院工作人员或查看医院导视牌。'
+    },
+    '用药咨询处': {
+        images: [],
+        guide: '科室详细导航信息正在完善中，请咨询医院工作人员或查看医院导视牌。'
+    },
+    '医保咨询处': {
+        images: [],
+        guide: '科室详细导航信息正在完善中，请咨询医院工作人员或查看医院导视牌。'
+    },
+    '客服中心': {
+        images: [],
+        guide: '科室详细导航信息正在完善中，请咨询医院工作人员或查看医院导视牌。'
     }
 };
 
@@ -230,7 +255,7 @@ function showDepartmentDetail(departmentName) {
             </div>
             <div class="navigation-guide">
                 <h3>📍 导航指引</h3>
-                <p>该科室的详细导航信息正在完善中，请咨询医院工作人员。</p>
+                <p>该科室的详细导航信息正在完善中，请咨询医院工作人员或查看医院导视牌。</p>
             </div>
         `;
         goToPage3();
@@ -247,7 +272,7 @@ function showDepartmentDetail(departmentName) {
             <div class="images-gallery">
                 ${detail.images.map(img => `
                     <div class="gallery-item">
-                        <img src="${img}" alt="${departmentName}导航图" loading="lazy">
+                        <img src="${img}" alt="${departmentName}导航图" loading="lazy" onerror="this.parentElement.style.display='none'">
                     </div>
                 `).join('')}
             </div>
