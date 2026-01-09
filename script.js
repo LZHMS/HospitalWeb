@@ -181,6 +181,10 @@ function goToPage1() {
     window.scrollTo(0, 0);
 }
 
+// ... 保持原有逻辑不变 ...
+// (为了节省篇幅，省略了中间未修改的函数，它们保持原样)
+// ...
+
 function goToPage2() {
     document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
     document.getElementById('page2').classList.add('active');
@@ -198,20 +202,32 @@ function selectPaymentMethod(method) {
     selectedPaymentMethod = method;
     const insuranceInfo = document.getElementById('medicalInsurance');
     
-    // 移除所有按钮的活动状态
+    // 移除所有按钮的选中状态
     document.querySelectorAll('.btn-primary').forEach(btn => {
-        btn.style.opacity = '0.6';
+        btn.classList.remove('selected');
     });
     
-    // 高亮选中的按钮
-    event.target.closest('.btn-primary').style.opacity = '1';
+    // 添加选中状态
+    const targetBtn = event.currentTarget || event.target.closest('.btn-primary');
+    if (targetBtn) {
+        targetBtn.classList.add('selected');
+    }
     
     // 如果选择电子医保，显示调取路径
     if (method === '电子医保') {
         insuranceInfo.style.display = 'block';
-        insuranceInfo.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        // 使用 requestAnimationFrame 确保 display: block 生效后再添加动画类
+        requestAnimationFrame(() => {
+            insuranceInfo.classList.add('show');
+            insuranceInfo.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
     } else {
-        insuranceInfo.style.display = 'none';
+        insuranceInfo.classList.remove('show');
+        setTimeout(() => {
+            if (!insuranceInfo.classList.contains('show')) {
+                insuranceInfo.style.display = 'none';
+            }
+        }, 300); // 等待过渡动画结束
     }
 }
 
@@ -220,25 +236,31 @@ function selectHospital(hospitalId) {
     // 隐藏所有医院的科室列表
     document.querySelectorAll('.hospital-departments').forEach(dept => {
         dept.style.display = 'none';
+        dept.classList.remove('show');
     });
     
-    // 移除所有医院按钮的活动状态
+    // 移除所有医院按钮的选中状态
     document.querySelectorAll('.btn-hospital').forEach(btn => {
-        btn.style.transform = 'scale(1)';
-        btn.style.opacity = '1';
+        btn.classList.remove('selected');
     });
     
-    // 高亮选中的按钮
-    event.target.closest('.btn-hospital').style.transform = 'scale(1.02)';
+    // 添加选中状态
+    const targetBtn = event.currentTarget || event.target.closest('.btn-hospital');
+    if (targetBtn) {
+        targetBtn.classList.add('selected');
+    }
     
     // 显示选中医院的科室列表
     const selectedHospital = document.getElementById(hospitalId);
     if (selectedHospital) {
         selectedHospital.style.display = 'block';
-        // 平滑滚动到科室列表
-        setTimeout(() => {
-            selectedHospital.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }, 100);
+        requestAnimationFrame(() => {
+            selectedHospital.classList.add('show');
+            // 平滑滚动到科室列表
+            setTimeout(() => {
+                selectedHospital.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        });
     }
 }
 
@@ -265,14 +287,19 @@ function showDepartmentDetail(departmentName) {
     // 设置标题
     document.getElementById('departmentTitle').textContent = departmentName;
     
-    // 生成图片画廊HTML
-    let imagesHTML = '';
+    // 生成步骤流HTML
+    let stepsHTML = '';
     if (detail.images && detail.images.length > 0) {
-        imagesHTML = `
-            <div class="images-gallery">
-                ${detail.images.map(img => `
-                    <div class="gallery-item">
-                        <img src="${img}" alt="${departmentName}导航图" loading="lazy" onerror="this.parentElement.style.display='none'">
+        stepsHTML = `
+            <div class="steps">
+                ${detail.images.map((img, index) => `
+                    <div class="step">
+                        <div class="step-number">${index + 1}</div>
+                        <div class="step-content">
+                            <h4 style="margin-bottom: 15px; color: var(--primary-color); font-size: 1rem;">📸 路线指引 - 第 ${index + 1} 步</h4>
+                            <img src="${img}" class="guide-image" onclick="openLightbox('${img}')" alt="${departmentName}导航 - 第${index + 1}步" style="cursor: zoom-in; width: 100%; display: block;">
+                            <p style="margin-top: 10px; font-size: 0.85rem; color: #999;">(点击图片可放大查看)</p>
+                        </div>
                     </div>
                 `).join('')}
             </div>
@@ -285,74 +312,43 @@ function showDepartmentDetail(departmentName) {
             <h2 class="detail-title">${departmentName}</h2>
         </div>
         <div class="navigation-guide">
-            <h3>📍 导航指引</h3>
+            <h3>📍 总路线指引</h3>
             <p>${detail.guide}</p>
         </div>
-        ${imagesHTML}
+        
+        ${stepsHTML ? `<h3 class="section-title" style="margin-top: 30px; margin-bottom: 20px; padding-left: 10px;">🚶 详细图文路径</h3>` : ''}
+        ${stepsHTML}
     `;
     
     // 切换到详情页
     goToPage3();
-    
-    // 应用 Justified Gallery 效果
-    setTimeout(() => {
-        justifyGallery();
-    }, 100);
 }
 
-// Justified Gallery 效果 - 自动调整图片宽度使行高统一
-function justifyGallery() {
-    const gallery = document.querySelector('.images-gallery');
-    if (!gallery) return;
-    
-    const items = gallery.querySelectorAll('.gallery-item');
-    if (items.length === 0) return;
-    
-    // 单张图片特殊处理
-    if (items.length === 1) {
-        return;
-    }
-    
-    // 等待所有图片加载完成
-    const images = Array.from(items).map(item => item.querySelector('img'));
-    let loadedCount = 0;
-    
-    images.forEach((img, index) => {
-        if (img.complete) {
-            calculateAspectRatio(img, items[index]);
-            loadedCount++;
-            if (loadedCount === images.length) {
-                adjustGallery();
-            }
-        } else {
-            img.addEventListener('load', function() {
-                calculateAspectRatio(img, items[index]);
-                loadedCount++;
-                if (loadedCount === images.length) {
-                    adjustGallery();
-                }
-            });
-        }
+// Lightbox 功能
+function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const content = lightbox.querySelector('.lightbox-content');
+    content.src = src;
+    lightbox.style.display = 'flex';
+    requestAnimationFrame(() => {
+        lightbox.classList.add('active');
     });
-    
-    function calculateAspectRatio(img, item) {
-        const aspectRatio = img.naturalWidth / img.naturalHeight;
-        item.dataset.aspectRatio = aspectRatio;
-    }
-    
-    function adjustGallery() {
-        items.forEach(item => {
-            const aspectRatio = parseFloat(item.dataset.aspectRatio) || 1.5;
-            const height = getComputedStyle(item).height;
-            const heightValue = parseFloat(height);
-            const width = heightValue * aspectRatio;
-            item.style.flexBasis = width + 'px';
+}
+
+// 关闭 Lightbox
+document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = document.getElementById('lightbox');
+    if(lightbox) {
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox || e.target.classList.contains('lightbox-close')) {
+                lightbox.classList.remove('active');
+                setTimeout(() => {
+                    lightbox.style.display = 'none';
+                }, 300);
+            }
         });
     }
-}
 
-// 初始化
-document.addEventListener('DOMContentLoaded', function() {
     // 设置初始页面
     goToPage1();
     
@@ -387,17 +383,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-    
-    // 响应式调整 Gallery
-    let resizeTimer;
-    window.addEventListener('resize', function() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-            if (window.innerWidth > 768) {
-                justifyGallery();
-            }
-        }, 250);
-    });
 });
 
 // 添加页面可见性检测
