@@ -1,0 +1,494 @@
+/* Global Styles */
+body {
+    background-color: #f5f3f0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    padding: 15px; /* 30rpx */
+    box-sizing: border-box;
+    max-width: 600px; 
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px; /* 40rpx */
+    padding-top: 20px;
+}
+
+.title {
+    font-size: 24px; /* 48rpx */
+    font-weight: 700;
+    color: #3a3a3a;
+    display: block;
+    margin-bottom: 7.5px; /* 15rpx */
+}
+
+.subtitle {
+    font-size: 14px; /* 28rpx */
+    color: #6a6a6a;
+    display: block;
+}
+
+.card {
+    background: white;
+    border-radius: 12px; /* 24rpx */
+    padding: 20px; /* 40rpx */
+    margin-bottom: 15px; /* 30rpx */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.section-title {
+    font-size: 16px; /* 32rpx */
+    font-weight: 700;
+    color: #3a3a3a;
+    margin-bottom: 10px; /* 20rpx */
+    display: block;
+}
+
+.subtitle-text {
+    font-size: 14px; /* 28rpx */
+    color: #6a6a6a;
+    margin-bottom: 15px; /* 30rpx */
+    display: block;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+/* Index - Booking Grid */
+.hospital-booking-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7.5px; /* 15rpx */
+    margin-bottom: 10px; /* 20rpx */
+}
+
+.btn-hospital-booking {
+    padding: 10px 2.5px; /* 20rpx 5rpx */
+    border-radius: 8px; /* 16rpx */
+    font-size: 12px; /* 24rpx */
+    font-weight: 600;
+    color: white;
+    min-height: 35px; /* 70rpx */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.hospital-booking-1 { background: linear-gradient(135deg, #e89b4e, #d68736); }
+.hospital-booking-2 { background: linear-gradient(135deg, #5da67d, #4a8f68); }
+.hospital-booking-3 { background: linear-gradient(135deg, #8675a8, #6f5c94); }
+.hospital-booking-4 { background: linear-gradient(135deg, #d66b6b, #c25555); }
+.hospital-booking-5 { background: linear-gradient(135deg, #87a67c, #6f8f68); }
+.hospital-booking-6 { background: linear-gradient(135deg, #6b8a9a, #5a7485); }
+
+.hospital-name {
+    line-height: 1.4;
+}
+
+.btn-hospital-booking.selected {
+    box-shadow: 0 0 0 2px #333;
+    transform: scale(0.98);
+}
+
+/* Index - Booking Link */
+.booking-link-container {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f0f9ff;
+    border-radius: 8px;
+    border: 1px solid #e0f2fe;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.link-tip {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    color: #5d7d8f;
+    margin-bottom: 10px;
+}
+
+.btn-booking-link {
+    width: 100%;
+    background: #5d7d8f;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Index - Payment Methods */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    flex: 1;
+    background: #5d7d8f;
+    color: white;
+    padding: 15px 10px;
+    border-radius: 12px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.2s;
+}
+.btn-primary:active, .btn-primary.active {
+    background: #4a6575;
+}
+
+.btn-primary .icon {
+    font-size: 24px;
+}
+
+/* Index - Carousel */
+.guide-section {
+    margin-top: 20px;
+    display: none; /* Hidden by default */
+}
+.guide-section.active {
+    display: block;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0 5px;
+}
+
+.chat-bubble {
+    background: #f0f9ff;
+    padding: 10px 15px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 14px;
+    justify-content: center;
+    max-width: 90%;
+}
+
+.guide-image {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: block;
+}
+
+.swiper-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding: 0 10px;
+}
+
+.btn-control {
+    background: white;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.btn-control:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #f5f5f5;
+}
+
+/* Hospital Page */
+.hospital-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px; /* 20rpx */
+}
+
+.btn-hospital {
+    padding: 15px 5px; /* 30rpx 10rpx */
+    border-radius: 8px; /* 16rpx */
+    font-size: 13px; /* 26rpx */
+    font-weight: 600;
+    color: white;
+    min-height: 60px; /* 120rpx */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.hospital-1 { box-shadow: 0 4px 10px rgba(232, 155, 78, 0.35); background: linear-gradient(135deg, #e89b4e, #d68736); }
+.hospital-2 { box-shadow: 0 4px 10px rgba(93, 166, 125, 0.35); background: linear-gradient(135deg, #5da67d, #4a8f68); }
+.hospital-3 { box-shadow: 0 4px 10px rgba(134, 117, 168, 0.35); background: linear-gradient(135deg, #8675a8, #6f5c94); }
+.hospital-4 { box-shadow: 0 4px 10px rgba(214, 107, 107, 0.35); background: linear-gradient(135deg, #d66b6b, #c25555); }
+
+.departments-section {
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.department-category {
+    margin-bottom: 20px; /* 40rpx */
+}
+
+.category-title {
+    font-size: 16px; /* 32rpx */
+    font-weight: 600;
+    color: #5d7d8f;
+    margin-bottom: 10px; /* 20rpx */
+    padding-bottom: 7.5px; /* 15rpx */
+    border-bottom: 1.5px solid #e0f2fe; /* 3rpx */
+    display: block;
+}
+
+.department-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7.5px; /* 15rpx */
+}
+
+.btn-department {
+    background: linear-gradient(135deg, #f5f3f0, #e8e6e3);
+    color: #3a3a3a;
+    border-radius: 6px; /* 12rpx */
+    padding: 10px 5px; /* 20rpx 10rpx */
+    font-size: 13px; /* 26rpx */
+    font-weight: 500;
+    border: 1px solid #d0ccc8; /* 2rpx */
+    transition: all 0.3s;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.btn-department:active {
+    background: linear-gradient(135deg, #5d7d8f, #4a6575);
+    color: white;
+    transform: scale(0.98);
+}
+
+/* Department Detail Page */
+.btn-back-top {
+    background: white;
+    color: #5d7d8f;
+    border: 1.5px solid #5d7d8f; /* 3rpx */
+    font-size: 13px; /* 26rpx */
+    font-weight: 600;
+    padding: 6px 20px; /* 12rpx 40rpx */
+    border-radius: 25px; /* 50rpx */
+    margin: 0 auto 20px auto; /* 40rpx */
+    width: fit-content;
+    display: block;
+    line-height: normal;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    text-decoration: none;
+    text-align: center;
+}
+
+.detail-header { margin-bottom: 15px; /* 30rpx */ }
+
+.detail-title {
+    font-size: 20px; /* 40rpx */
+    font-weight: 700;
+    color: #3a3a3a;
+    display: block;
+}
+
+.navigation-guide {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: 10px; /* 20rpx */
+    padding: 17.5px; /* 35rpx */
+    border-left: 5px solid #5d7d8f; /* 10rpx */
+    margin-bottom: 20px; /* 40rpx */
+}
+
+.guide-title {
+    font-size: 14px; /* 28rpx */
+    font-weight: 700;
+    color: #5d7d8f;
+    margin-bottom: 10px; /* 20rpx */
+    display: block;
+}
+
+.guide-text {
+    font-size: 15px; /* 30rpx */
+    color: #3a3a3a;
+    line-height: 25px; /* 50rpx */
+    display: block;
+}
+
+.section-title-small {
+    font-size: 15px; /* 30rpx */
+    font-weight: 600;
+    color: #3a3a3a;
+    margin-bottom: 15px; /* 30rpx */
+    display: block;
+    padding-left: 5px; /* 10rpx */
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    padding-left: 10px; /* 20rpx */
+}
+
+.steps::before {
+    content: '';
+    position: absolute;
+    left: 20px; /* 40rpx */
+    top: 15px; /* 30rpx */
+    bottom: 15px; /* 30rpx */
+    width: 2px; /* 4rpx */
+    background: #d0ccc8;
+    z-index: 0;
+}
+
+.step {
+    display: flex;
+    gap: 15px; /* 30rpx */
+    margin-bottom: 20px; /* 40rpx */
+    position: relative;
+    z-index: 1;
+}
+
+.step:last-child {
+    margin-bottom: 0;
+}
+
+.step-number {
+    width: 30px; /* 60rpx */
+    height: 30px; /* 60rpx */
+    background: #5d7d8f;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px; /* 32rpx */
+    box-shadow: 0 0 0 4px #fff; /* 8rpx */
+    flex-shrink: 0;
+}
+
+.step-content {
+    background: white;
+    padding: 12.5px 15px; /* 25rpx 30rpx */
+    border-radius: 10px; /* 20rpx */
+    box-shadow: 0 2px 7.5px rgba(0, 0, 0, 0.08); /* 4rpx 15rpx */
+    flex: 1;
+}
+
+.step-label {
+    font-size: 13px; /* 26rpx */
+    font-weight: 600;
+    color: #5d7d8f;
+    margin-bottom: 10px; /* 20rpx */
+    display: block;
+}
+
+.tip-text {
+    font-size: 12px; /* 24rpx */
+    color: #999;
+    margin-top: 7.5px; /* 15rpx */
+    display: block;
+    text-align: center;
+}
+
+.no-data {
+    text-align: center;
+    padding: 40px 20px; /* 80rpx 40rpx */
+}
+
+.no-data-text {
+    font-size: 16px; /* 32rpx */
+    color: #6a6a6a;
+    display: block;
+    margin-bottom: 10px; /* 20rpx */
+}
+
+.no-data-tip {
+    font-size: 14px; /* 28rpx */
+    color: #999;
+    display: block;
+}
+
+/* Image preview modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.modal-content {
+    max-width: 95%;
+    max-height: 80%;
+}
+.modal-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>医院选择 - 健康就医导航</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Back Button -->
+        <button class="btn-back-top" onclick="window.location.href='index.html'">返回首页</button>
+
+        <div class="card">
+            <span class="section-title">医院选择</span>
+            <div class="hospital-buttons" id="hospitalButtons">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+
+        <!-- Departments Section -->
+        <div class="departments-section" id="departmentsSection" style="display: none;">
+            <div class="card">
+                <span class="section-title">科室选择</span>
+                <div id="departmentCategories">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const hospitalDepartments = {
+            hospital1: {
+                name: '深圳市第二人民医院',
+                categories: [
+                    { category: '内科类', departments: ['全科医学科', '儿科', '呼吸与危重学科', '风湿免疫科', '老年医学科', '综合内科', '内分泌科', '神经内科', '消化内科', '血液内科', '心血管内科', '肾内科'] },
+                    { category: '外科类', departments: ['血管外科', '创伤骨科', '肛肠外科', '甲乳外科', '胸外科', '骨关节骨肿瘤科', '肝胆脾胰外科', '普通外科', '脊柱外科', '运动医学科', '耳鼻咽喉科', '神经外科', '泌尿外科', '烧伤科', '整形美容科', '针灸推拿科', '妇科', '皮肤科', '口腔科'] },
+                    { category: '检查类', departments: ['急诊CT/X线', '妇科超声室', '检验科', '生殖彩超室', '操作治疗区(抽血、换药、注射、雾化)'] },
+                    { category: '其他', departments: ['门诊便民服务中心', '国际医疗部', '收费处', '中药房', '西药房'] }
+                ]
+            },
+            hospital2: {
+                name: '广州中医药大学深圳医院',
+                categories: [
+                    { category: '内科类', departments: ['内科'] },
+                    { category: '外科类', departments: ['外科', '泌尿外科', '眼科', '美容整形外科', '耳鼻咽喉科', '皮肤科'] },
+                    { category: '检查类', departments: ['急诊CT/X线', '妇科超声室', '检验科', '生殖彩超室', '操作治疗区(抽血、换药、注射、雾化)'] },
+                    { category: '其他', departments: ['门诊便民服务中心', '国际医疗部', '收费处', '中药房', '西药房'] }
+                ]
+            },
+            hospital3: {
+                name: '北京大学深圳医院',
+                categories: [
+                    { category: '内科类', departments: ['心血管内科', '内分泌科', '风湿免疫科', '肿瘤内科', '肾内科', '老年医学科', '血液内科', '神经内科', '儿科', '综合诊区'] },
+                    { category: '外科类', departments: ['胸外科', '肝胆胰外科', '显微淋巴外科', '神经外科', '心血管外科', '乳腺甲状腺外科', '脊柱外科', '骨关节科', '超声介入科', '胃肠外科', '运动医学科', '手足与血管外科', '眼科', '耳鼻喉科', '妇科诊区', '皮肤科', '美容整形外科'] },
+                    { category: '检查类', departments: ['妇科彩超室', '检验科', '操作治疗区(抽血、换药、注射、雾化)', '心电图', '放射科检查(DR、CT、MRI)', '彩超检查'] },
+                    { category: '其他', departments: ['自助取号处', '中西药房'] }
+                ]
+            },
+            hospital4: {
+                name: '罗湖区人民医院',
+                categories: [
+                    { category: '内科类', departments: ['消化内科', '神经内科', '风湿免疫科', '肾内科', '血液内科', '呼吸内科', '内分泌科', '心内科', '临床营养科', '儿科', '中医科', '全科医学科', '老年医学科'] },
+                    { category: '外科类', departments: ['骨外科', '普外科', '乳腺外科', '甲状腺外科', '血管外科', '胸外科', '神经外科', '泌尿外科', '产科', '耳鼻喉科', '中医骨伤科', '皮肤科', '眼科', '血液透析室'] },
+                    { category: '检查类', departments: ['放射影像科(DR、CT、MRI)', '消化内镜室', '超声科', '皮肤科治疗室', '呼吸内镜室', '肺功能室', '功能检查科(心电图、脑电图、肌电图、动态心电图、动态血压、经颅多普勒、运动平板)'] },
+                    { category: '其他', departments: ['挂号收费处', '药房', '便民服务中心', '麻醉门诊'] }
+                ]
+            }
+        };
+
+        const hospitalList = [
+            { id: 'hospital1', name: '深圳市第二人民医院' },
+            { id: 'hospital2', name: '广州中医药大学深圳医院' },
+            { id: 'hospital3', name: '北京大学深圳医院' },
+            { id: 'hospital4', name: '罗湖区人民医院' }
+        ];
+
+        let selectedHospitalId = '';
+
+        // Init Hospital List
+        const hospitalButtonsContainer = document.getElementById('hospitalButtons');
+        hospitalList.forEach((h, index) => {
+            const btn = document.createElement('button');
+            btn.className = `btn-hospital hospital-${index + 1}`;
+            btn.innerHTML = `<span class="hospital-name">${h.name}</span>`;
+            btn.onclick = () => selectHospital(h.id);
+            hospitalButtonsContainer.appendChild(btn);
+        });
+
+        function selectHospital(id) {
+            selectedHospitalId = id;
+            renderDepartments(id);
+            // Scroll to departments
+            document.getElementById('departmentsSection').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('departmentsSection').scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+
+        function renderDepartments(hospitalId) {
+            const container = document.getElementById('departmentCategories');
+            container.innerHTML = '';
+            
+            const data = hospitalDepartments[hospitalId];
+            if (!data) return;
+
+            data.categories.forEach(cat => {
+                const catDiv = document.createElement('div');
+                catDiv.className = 'department-category';
+                
+                const title = document.createElement('span');
+                title.className = 'category-title';
+                title.textContent = cat.category;
+                catDiv.appendChild(title);
+
+                const deptList = document.createElement('div');
+                deptList.className = 'department-list';
+                
+                cat.departments.forEach(dept => {
+                    const btn = document.createElement('button');
+                    btn.className = 'btn-department';
+                    btn.textContent = dept;
+                    btn.onclick = () => showDepartmentDetail(dept, hospitalId); // Pass hospitalId
+                    deptList.appendChild(btn);
+                });
+
+                catDiv.appendChild(deptList);
+                container.appendChild(catDiv);
+            });
+        }
+
+        function showDepartmentDetail(deptName, hospitalId) {
+            // Navigate to department detail page with query params
+            const url = `department.html?department=${encodeURIComponent(deptName)}&hospital=${encodeURIComponent(hospitalId)}`;
+            window.location.href = url;
+        }
+
+    </script>
+</body>
+</html>

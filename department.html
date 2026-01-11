@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>科室指引 - 健康就医导航</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/departmentData.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Back Button -->
+        <button class="btn-back-top" onclick="window.history.back()">回退</button>
+
+        <div class="card">
+            <div class="detail-header">
+                <span class="detail-title" id="departmentNameTitle"></span>
+            </div>
+
+            <div class="navigation-guide">
+                <span class="guide-title">📍 总路线指引</span>
+                <span class="guide-text" id="guideText"></span>
+            </div>
+
+            <div id="stepsContainer">
+                <span class="section-title-small">🚶 详细图文路径</span>
+                <div class="steps" id="stepsList">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+
+            <div id="noDataContainer" class="no-data" style="display: none;">
+                <span class="no-data-text">该科室的详细导航信息正在完善中</span>
+                <span class="no-data-tip">请咨询医院工作人员或查看医院导视牌</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Preview Modal -->
+    <div class="modal-overlay" id="imageModal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img id="modalImage" src="" alt="Preview">
+        </div>
+    </div>
+
+    <script>
+        // Parse URL params
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                department: params.get('department'),
+                hospital: params.get('hospital')
+            };
+        }
+
+        const params = getQueryParams();
+        const departmentName = params.department || '';
+        const hospitalId = params.hospital || '';
+
+        document.getElementById('departmentNameTitle').textContent = departmentName;
+        document.title = `${departmentName} - 健康就医导航`;
+
+        // Logic to load data
+        function loadDepartmentDetail(hospitalId, departmentName) {
+            let key = departmentName;
+            if (hospitalId === 'hospital3') { // 北京大学深圳医院
+                key = 'PKU_' + departmentName;
+            } else if (hospitalId === 'hospital4') { // 罗湖区人民医院
+                key = 'LH_' + departmentName;
+            }
+
+            // window.departmentDetails comes from js/departmentData.js
+            const allDetails = window.departmentDetails || {};
+            const detail = allDetails[key] || allDetails[departmentName];
+
+            if (detail) {
+                renderContent(detail.images || [], detail.guide || '暂无路线指引信息');
+            } else {
+                showNoData();
+            }
+        }
+
+        function renderContent(images, guide) {
+            document.getElementById('guideText').textContent = guide;
+            
+            if (images.length > 0) {
+                const stepsList = document.getElementById('stepsList');
+                stepsList.innerHTML = '';
+                
+                images.forEach((imgUrl, index) => {
+                    const step = document.createElement('div');
+                    step.className = 'step';
+                    step.innerHTML = `
+                        <div class="step-number">${index + 1}</div>
+                        <div class="step-content">
+                            <span class="step-label">📸 路线指引 - 第 ${index + 1} 步</span>
+                            <img src="${imgUrl}" class="guide-image" onclick="openModal('${imgUrl}')" loading="lazy">
+                            <span class="tip-text">(点击图片可放大查看)</span>
+                        </div>
+                    `;
+                    stepsList.appendChild(step);
+                });
+                document.getElementById('stepsContainer').style.display = 'block';
+                document.getElementById('noDataContainer').style.display = 'none';
+            } else {
+                // If no images but has guide text, show guide text only? 
+                // Creating existing code logic: if images length 0 show no data?
+                // Actually the WXML logic was: wx:if="{{images.length > 0}}" show steps, else show no-data.
+                // But guide text is shown always if detail matches.
+                // Let's stick to showing guide text, but hide steps section if no images.
+                document.getElementById('stepsContainer').style.display = 'none';
+                
+                // If we display guide text but no images, maybe we shouldn't show "No Data" full block?
+                // The original code shows "No Data" block ONLY if images.length === 0.
+                // And Guide Text is shown regardless.
+                // So if guide text exists but no images, we show Guide Text + No Data Block (which says info improving).
+                // Wait, if detail is found, we have data. If detail NOT found, we set guideText manually.
+                
+                document.getElementById('noDataContainer').style.display = 'block';
+            }
+        }
+        
+        function showNoData() {
+            document.getElementById('guideText').textContent = '该科室的详细导航信息正在完善中，请咨询医院工作人员或查看医院导视牌';
+            document.getElementById('stepsContainer').style.display = 'none';
+            document.getElementById('noDataContainer').style.display = 'block';
+        }
+
+        // Modal Logic
+        function openModal(url) {
+            document.getElementById('modalImage').src = url;
+            document.getElementById('imageModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        // Init
+        loadDepartmentDetail(hospitalId, departmentName);
+
+    </script>
+</body>
+</html>
