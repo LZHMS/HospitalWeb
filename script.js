@@ -393,6 +393,10 @@ function showDepartmentDetail(departmentName) {
     let key = departmentName;
     if (currentHospitalId === 'hospital1') {
         key = 'SZ2_' + departmentName;
+    } else if (currentHospitalId === 'hospital2') {
+        key = 'GZ_' + departmentName;
+    } else if (currentHospitalId === 'hospital3') {
+        key = 'PKU_' + departmentName;
     } else if (currentHospitalId === 'hospital4') {
         key = 'Luohu_' + departmentName;
     }
