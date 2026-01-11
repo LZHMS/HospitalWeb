@@ -169,9 +169,15 @@ body {
 
 /* Hospital Buttons */
 .hospital-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .hospital-buttons {
+        grid-template-columns: 1fr;
+    }
 }
 
 .btn-hospital {

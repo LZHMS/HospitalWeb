@@ -294,6 +294,204 @@ const departmentDetails = {
                 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/消化内镜中心2.7ps4to8dx.webp',
                 'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/消化内镜中心3.26lyv5tqox.webp'],
         guide: '门诊楼正门进入直行，乘右手侧电梯至五楼，出五楼电梯出口向右侧通道直行到底'
+    },
+    
+    // 北京大学深圳医院
+    'PKU_自助取号处': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/自助取号处1.96a8d2uggk.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/自助取号处2.et009yqqa.webp'],
+        guide: '医院门诊楼正门进入直行左手侧为自助取号处'
+    },
+    'PKU_妇科诊区': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/妇科诊区1.51en0yy82a.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/妇科诊区2.1e93dg2fk8.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至二楼，扶梯出口右侧'
+    },
+    'PKU_中西药房': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/中西药房、妇科彩超室1.7zqx4h88aj.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/中西药房、妇科彩超室2.5moan9uf44.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/中西药房、妇科彩超室3.1lcb8vqbrh.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/中西药房、妇科彩超室4.2dp6qm6xgw.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至二楼，扶梯出口左侧'
+    },
+    'PKU_妇科彩超室': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/中西药房、妇科彩超室1.7zqx4h88aj.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/中西药房、妇科彩超室2.5moan9uf44.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/中西药房、妇科彩超室3.1lcb8vqbrh.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/中西药房、妇科彩超室4.2dp6qm6xgw.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至二楼，扶梯出口左侧'
+    },
+    'PKU_心血管内科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、内分泌科、风湿免疫科、肿瘤内科、肾内科、老年医学科、血液内科、操作治疗区（抽血、换药、注射、雾化）、心电图1.8dxcvchvq1.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、内分泌科、风湿免疫科、肿瘤内科、肾内科、老年医学科、血液内科、操作治疗区（抽血、换药、注射、雾化）、心电图2.5q7wkzoudn.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至三楼，扶梯出口左侧'
+    },
+    'PKU_内分泌科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、内分泌科、风湿免疫科、肿瘤内科、肾内科、老年医学科、血液内科、操作治疗区（抽血、换药、注射、雾化）、心电图1.8dxcvchvq1.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、内分泌科、风湿免疫科、肿瘤内科、肾内科、老年医学科、血液内科、操作治疗区（抽血、换药、注射、雾化）、心电图2.5q7wkzoudn.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至三楼，扶梯出口左侧'
+    },
+    'PKU_风湿免疫科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、内分泌科、风湿免疫科、肿瘤内科、肾内科、老年医学科、血液内科、操作治疗区（抽血、换药、注射、雾化）、心电图1.8dxcvchvq1.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、内分泌科、风湿免疫科、肿瘤内科、肾内科、老年医学科、血液内科、操作治疗区（抽血、换药、注射、雾化）、心电图2.5q7wkzoudn.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至三楼，扶梯出口左侧'
+    },
+    'PKU_肿瘤内科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、内分泌科、风湿免疫科、肿瘤内科、肾内科、老年医学科、血液内科、操作治疗区（抽血、换药、注射、雾化）、心电图1.8dxcvchvq1.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、内分泌科、风湿免疫科、肿瘤内科、肾内科、老年医学科、血液内科、操作治疗区（抽血、换药、注射、雾化）、心电图2.5q7wkzoudn.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至三楼，扶梯出口左侧'
+    },
+    'PKU_肾内科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、内分泌科、风湿免疫科、肿瘤内科、肾内科、老年医学科、血液内科、操作治疗区（抽血、换药、注射、雾化）、心电图1.8dxcvchvq1.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、内分泌科、风湿免疫科、肿瘤内科、肾内科、老年医学科、血液内科、操作治疗区（抽血、换药、注射、雾化）、心电图2.5q7wkzoudn.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至三楼，扶梯出口左侧'
+    },
+    'PKU_老年医学科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、内分泌科、风湿免疫科、肿瘤内科、肾内科、老年医学科、血液内科、操作治疗区（抽血、换药、注射、雾化）、心电图1.8dxcvchvq1.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、内分泌科、风湿免疫科、肿瘤内科、肾内科、老年医学科、血液内科、操作治疗区（抽血、换药、注射、雾化）、心电图2.5q7wkzoudn.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至三楼，扶梯出口左侧'
+    },
+    'PKU_血液内科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、内分泌科、风湿免疫科、肿瘤内科、肾内科、老年医学科、血液内科、操作治疗区（抽血、换药、注射、雾化）、心电图1.8dxcvchvq1.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、内分泌科、风湿免疫科、肿瘤内科、肾内科、老年医学科、血液内科、操作治疗区（抽血、换药、注射、雾化）、心电图2.5q7wkzoudn.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至三楼，扶梯出口左侧'
+    },
+    'PKU_操作治疗区(抽血、换药、注射、雾化)': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、内分泌科、风湿免疫科、肿瘤内科、肾内科、老年医学科、血液内科、操作治疗区（抽血、换药、注射、雾化）、心电图1.8dxcvchvq1.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、内分泌科、风湿免疫科、肿瘤内科、肾内科、老年医学科、血液内科、操作治疗区（抽血、换药、注射、雾化）、心电图2.5q7wkzoudn.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至三楼，扶梯出口左侧'
+    },
+    'PKU_心电图': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、内分泌科、风湿免疫科、肿瘤内科、肾内科、老年医学科、血液内科、操作治疗区（抽血、换药、注射、雾化）、心电图1.8dxcvchvq1.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、内分泌科、风湿免疫科、肿瘤内科、肾内科、老年医学科、血液内科、操作治疗区（抽血、换药、注射、雾化）、心电图2.5q7wkzoudn.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至三楼，扶梯出口左侧'
+    },
+    'PKU_检验科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/检验科、泌尿外科、神经内科1.7lkhdm2adz.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/检验科、泌尿外科、神经内科2.3rbpunkcgb.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至三楼，扶梯出口右侧'
+    },
+    'PKU_神经内科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/检验科、泌尿外科、神经内科1.7lkhdm2adz.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/检验科、泌尿外科、神经内科2.3rbpunkcgb.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至三楼，扶梯出口右侧'
+    },
+    'PKU_儿科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/儿科1.3ns3wxru5p.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/儿科2.41yjnt0515.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/儿科3.8hgyt2cj8e.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至三楼，扶梯出口向右转再向右转，直行到达儿科诊室'
+    },
+    'PKU_运动医学科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科1.7i0vfwah6l.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科2.3rbpunllzo.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科3.1vz52196cq.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至四楼，扶梯出口向左转直行'
+    },
+    'PKU_胃肠外科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科1.7i0vfwah6l.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科2.3rbpunllzo.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科3.1vz52196cq.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至四楼，扶梯出口向左转直行'
+    },
+    'PKU_心血管外科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科1.7i0vfwah6l.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科2.3rbpunllzo.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科3.1vz52196cq.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至四楼，扶梯出口向左转直行'
+    },
+    'PKU_脊柱外科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科1.7i0vfwah6l.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科2.3rbpunllzo.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科3.1vz52196cq.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至四楼，扶梯出口向左转直行'
+    },
+    'PKU_肝胆胰外科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科1.7i0vfwah6l.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科2.3rbpunllzo.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科3.1vz52196cq.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至四楼，扶梯出口向左转直行'
+    },
+    'PKU_超声介入科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科1.7i0vfwah6l.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科2.3rbpunllzo.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科3.1vz52196cq.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至四楼，扶梯出口向左转直行'
+    },
+    'PKU_显微淋巴外科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科1.7i0vfwah6l.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科2.3rbpunllzo.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科3.1vz52196cq.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至四楼，扶梯出口向左转直行'
+    },
+    'PKU_胸外科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科1.7i0vfwah6l.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科2.3rbpunllzo.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科3.1vz52196cq.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至四楼，扶梯出口向左转直行'
+    },
+    'PKU_手足与血管外科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科1.7i0vfwah6l.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科2.3rbpunllzo.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科3.1vz52196cq.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至四楼，扶梯出口向左转直行'
+    },
+    'PKU_骨关节科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科1.7i0vfwah6l.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科2.3rbpunllzo.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科3.1vz52196cq.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至四楼，扶梯出口向左转直行'
+    },
+    'PKU_乳腺甲状腺外科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科1.7i0vfwah6l.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科2.3rbpunllzo.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科3.1vz52196cq.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至四楼，扶梯出口向左转直行'
+    },
+    'PKU_神经外科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科1.7i0vfwah6l.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科2.3rbpunllzo.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科3.1vz52196cq.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至四楼，扶梯出口向左转直行'
+    },
+    'PKU_美容整形外科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科1.7i0vfwah6l.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科2.3rbpunllzo.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/运动医学科、胃肠外科、心血管外科、脊柱外科、肝胆胰外科、超声介入科、显微淋巴外科、胸外科、手足与血管外科、骨关节科、乳腺甲状腺外科、神经外科、美容整形外科3.1vz52196cq.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至四楼，扶梯出口向左转直行'
+    },
+    'PKU_眼科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/眼科1.67xy9kt45l.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/眼科2.26lyv6p0sa.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至四楼，扶梯出口向右转'
+    },
+    'PKU_皮肤科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/皮肤科1.3d5a3segw1.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/皮肤科2.5xb4gfefic.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/皮肤科3.5xb4gfefhy.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至四楼，从扶梯出口左前方步梯至五楼，五楼步梯出口右侧'
+    },
+    'PKU_综合诊区': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/综合诊区、耳鼻喉科1.icly00cad.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/综合诊区、耳鼻喉科2.8dxcvcmdkn.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/综合诊区、耳鼻喉科3.8l0kqs8izt.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至四楼，从扶梯出口左前方步梯至五楼，五楼步梯出口左侧'
+    },
+    'PKU_耳鼻喉科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/综合诊区、耳鼻喉科1.icly00cad.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/综合诊区、耳鼻喉科2.8dxcvcmdkn.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/综合诊区、耳鼻喉科3.8l0kqs8izt.webp'],
+        guide: '医院门诊楼正门进入直行，乘坐右边扶梯至四楼，从扶梯出口左前方步梯至五楼，五楼步梯出口左侧'
+    },
+    'PKU_放射科检查(DR、CT、MRI)': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/放射科检查（DR、CT、MRI）、彩超检查1.8s3sm7valk.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/放射科检查（DR、CT、MRI）、彩超检查2.8l0kqs955n.webp'],
+        guide: '进入医院大门后向右前方直行至外科楼'
+    },
+    'PKU_彩超检查': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/放射科检查（DR、CT、MRI）、彩超检查1.8s3sm7valk.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/放射科检查（DR、CT、MRI）、彩超检查2.8l0kqs955n.webp'],
+        guide: '进入医院大门后向右前方直行至外科楼'
     }
 };
 
