@@ -5,28 +5,38 @@
 }
 
 :root {
-    /* 莫兰迪色系配色 */
-    --morandi-blue: #92a8b3;
-    --morandi-green: #a8b5a0;
-    --morandi-pink: #c4a8a8;
-    --morandi-purple: #b5a8c4;
-    --morandi-yellow: #c4b8a8;
-    --morandi-orange: #c4aca8;
+    /* 莫兰迪色系配色 - 加深饱和度 */
+    --morandi-blue: #6b8a9a;
+    --morandi-green: #87a67c;
+    --morandi-pink: #b8888a;
+    --morandi-purple: #9a87a8;
+    --morandi-yellow: #b8a688;
+    --morandi-orange: #d9905f;
     
-    /* 主色调 */
-    --primary-color: #7d9aab;
-    --secondary-color: #9db39d;
-    --accent-color: #b8a89d;
-    --danger-color: #c49d9d;
+    /* 医院按钮专用莫兰迪色 - 更饱和 */
+    --hospital-orange: #e89b4e;
+    --hospital-orange-dark: #d68736;
+    --hospital-green: #5da67d;
+    --hospital-green-dark: #4a8f68;
+    --hospital-purple: #8675a8;
+    --hospital-purple-dark: #6f5c94;
+    --hospital-red: #d66b6b;
+    --hospital-red-dark: #c25555;
     
-    /* 文字颜色 */
-    --text-primary: #5a5a5a;
-    --text-secondary: #8a8a8a;
+    /* 主色调 - 加深 */
+    --primary-color: #5d7d8f;
+    --secondary-color: #7a9b7a;
+    --accent-color: #a88f7d;
+    --danger-color: #b87d7d;
+    
+    /* 文字颜色 - 加深 */
+    --text-primary: #3a3a3a;
+    --text-secondary: #6a6a6a;
     
     /* 背景颜色 */
     --bg-light: #f5f3f0;
     --bg-white: #faf9f7;
-    --border-color: #e0ddd8;
+    --border-color: #d0ccc8;
     
     /* 阴影 */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -183,22 +193,40 @@ body {
 }
 
 .hospital-1 {
-    background: linear-gradient(135deg, #f59e0b, #d97706);
+    background: linear-gradient(135deg, var(--hospital-orange), var(--hospital-orange-dark));
+    box-shadow: 0 8px 20px rgba(232, 155, 78, 0.35);
+}
+
+.hospital-1:hover {
+    box-shadow: 0 12px 28px rgba(232, 155, 78, 0.45);
 }
 
 .hospital-2 {
-    background: linear-gradient(135deg, #10b981, #059669);
+    background: linear-gradient(135deg, var(--hospital-green), var(--hospital-green-dark));
+    box-shadow: 0 8px 20px rgba(93, 166, 125, 0.35);
+}
+
+.hospital-2:hover {
+    box-shadow: 0 12px 28px rgba(93, 166, 125, 0.45);
 }
 
 .hospital-3 {
-    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    background: linear-gradient(135deg, var(--hospital-purple), var(--hospital-purple-dark));
+    box-shadow: 0 8px 20px rgba(134, 117, 168, 0.35);
+}
+
+.hospital-3:hover {
+    box-shadow: 0 12px 28px rgba(134, 117, 168, 0.45);
 }
 
 .hospital-4 {
-    background: linear-gradient(135deg, #ef4444, #dc2626);
-    /* 更明显的阴影和边框以突出显示 */
-    box-shadow: 0 8px 20px rgba(220, 38, 38, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(135deg, var(--hospital-red), var(--hospital-red-dark));
+    box-shadow: 0 8px 20px rgba(214, 107, 107, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hospital-4:hover {
+    box-shadow: 0 12px 28px rgba(214, 107, 107, 0.45);
 }
 
 .hospital-name {
@@ -1055,4 +1083,192 @@ input:focus {
     .carousel-btn.next {
         right: 10px;
     }
+}
+
+/* ========================================
+   路线指引现代化样式 - 步骤流设计
+   ======================================== */
+
+/* 步骤流容器 */
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 20px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* 步骤流连接线 */
+.steps::before {
+    content: '';
+    position: absolute;
+    left: 34px;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    background: var(--border-color);
+    z-index: 0;
+}
+
+/* 单个步骤 */
+.step {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.step:last-child {
+    margin-bottom: 0;
+}
+
+/* 步骤编号 */
+.step-number {
+    width: 32px;
+    height: 32px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 0 0 4px var(--bg-white);
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+/* 步骤内容 */
+.step-content {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    flex: 1;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 步骤内容的小三角 */
+.step-content::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 15px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    transform: rotate(45deg);
+    border-radius: 2px;
+}
+
+.step-content:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-md);
+}
+
+/* 导航指引框现代化 */
+.navigation-guide {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: var(--radius-lg);
+    padding: 25px;
+    border-left: 5px solid var(--accent-color, #0ea5e9);
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.navigation-guide::after {
+    content: '📍';
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+    font-size: 6rem;
+    opacity: 0.1;
+    transform: rotate(-15deg);
+}
+
+.navigation-guide h3 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.navigation-guide p {
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* Lightbox 图片放大功能 */
+.lightbox-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+}
+
+.lightbox-modal.active {
+    opacity: 1;
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.lightbox-modal.active .lightbox-content {
+    transform: scale(1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    background: rgba(255,255,255,0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.lightbox-close:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+/* 图片可点击提示 */
+.guide-image {
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+}
+
+.guide-image:hover {
+    transform: scale(1.02);
 }

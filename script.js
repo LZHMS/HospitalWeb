@@ -14,155 +14,286 @@ const carouselStates = {
     'socialCardCarousel': { currentIndex: 0, totalSlides: 3 }
 };
 
-// 科室导航详情数据
+// 科室导航详情数据 - 深圳市第二人民医院
 const departmentDetails = {
+    // 外科集合（血管外科、创伤骨科等）
+    '血管外科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/外科1.pfttdz13d.webp', 
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/外科2.96a8d1fio6.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至二楼，二楼电梯出口左侧诊室'
+    },
+    '创伤骨科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/外科1.pfttdz13d.webp', 
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/外科2.96a8d1fio6.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至二楼，二楼电梯出口左侧诊室'
+    },
     '肛肠外科': {
-        images: ['./images/GangChang/img1.png', './images/GangChang/img2.png'],
-        guide: '二楼电梯出口左转'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/外科1.pfttdz13d.webp', 
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/外科2.96a8d1fio6.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至二楼，二楼电梯出口左侧诊室'
+    },
+    '甲乳外科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/外科1.pfttdz13d.webp', 
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/外科2.96a8d1fio6.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至二楼，二楼电梯出口左侧诊室'
+    },
+    '胸外科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/外科1.pfttdz13d.webp', 
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/外科2.96a8d1fio6.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至二楼，二楼电梯出口左侧诊室'
+    },
+    '骨关节骨肿瘤科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/外科1.pfttdz13d.webp', 
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/外科2.96a8d1fio6.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至二楼，二楼电梯出口左侧诊室'
+    },
+    '肝胆脾胰外科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/外科1.pfttdz13d.webp', 
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/外科2.96a8d1fio6.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至二楼，二楼电梯出口左侧诊室'
+    },
+    '普通外科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/外科1.pfttdz13d.webp', 
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/外科2.96a8d1fio6.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至二楼，二楼电梯出口左侧诊室'
+    },
+    '脊柱外科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/外科1.pfttdz13d.webp', 
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/外科2.96a8d1fio6.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至二楼，二楼电梯出口左侧诊室'
+    },
+    '运动医学科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/外科1.pfttdz13d.webp', 
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/外科2.96a8d1fio6.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至二楼，二楼电梯出口左侧诊室'
     },
     '烧伤科': {
-        images: ['./images/ShaoShang/img1.png'],
-        guide: '六楼电梯出口右转'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/烧伤科1.70atr9pcju.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/烧伤科2.8dxcvb0ekn.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至六楼，六楼电梯出口右侧诊室'
     },
     '整形美容科': {
-        images: ['./images/MeiRong/img1.png'],
-        guide: '六楼电梯出口左转'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/整形美容科1.8ok6ogg65b.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/整形美容科2.175vhz2fq4.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至六楼，六楼电梯出口左侧诊室'
+    },
+    '妇科': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/妇科1.8dxcvb24z9.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/妇科2.9o0a1mk4a3.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至三楼，三楼电梯出口左侧诊室'
     },
     '皮肤科': {
-        images: ['./images/PiFu/img1.png', './images/PiFu/img2.png'],
-        guide: '三楼电梯出口向左前方直行，后右转'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/皮肤科1.5moan8iee3.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/皮肤科2.102nmjjuqv.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/皮肤科3.2oc0jqa4wo.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至三楼，三楼电梯出口向左前方通道直行后右转，左侧诊室'
     },
     '儿科': {
-        images: ['./images/PiFu/img1.png', './images/PiFu/img2.png'],
-        guide: '三楼电梯出口向左前方直行，后右转'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/皮肤科1.5moan8iee3.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/皮肤科2.102nmjjuqv.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/皮肤科3.2oc0jqa4wo.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至三楼，三楼电梯出口向左前方通道直行后右转，左侧诊室'
     },
     '耳鼻咽喉科': {
-        images: ['./images/ErBi/img1.png', './images/ErBi/img2.png'],
-        guide: '五楼电梯出口向左前方直行，后右转'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/耳鼻喉科1.45i5lhex0y.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/耳鼻喉科2.175vhz6nju.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/耳鼻喉科3.92qmfbsotq.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至五楼，五楼电梯出口向左前方通道直行后右转，左侧诊室'
     },
     '口腔科': {
-        images: ['./images/KouQiang/img1.png', './images/KouQiang/img2.png', './images/KouQiang/img3.png'],
-        guide: '五楼电梯出口向左转为口腔一区，向右转为口腔二区'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/口腔科1.99tuarfn5h.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/口腔科2.9ddg8h8pvh.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/口腔科3.2dp6qkwd1b.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/口腔科4.3k8hz6l9ma.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至五楼，五楼电梯出口向左转为口腔一区，向右转为口腔二区'
     },
     '肿瘤科': {
-        images: ['./images/ZhongLiu/img1.png', './images/ZhongLiu/img2.png'],
-        guide: '四楼电梯出口右前方诊室'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/肿瘤科、泌尿外科、肾内科1.8ok6ogmn2h.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/肿瘤科、泌尿外科、肾内科2.70atr9wcwj.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/肿瘤科、泌尿外科、肾内科3.3yexq1v0p1.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至四楼，四楼电梯出口右前方诊室'
     },
     '泌尿外科': {
-        images: ['./images/ZhongLiu/img1.png', './images/ZhongLiu/img2.png'],
-        guide: '四楼电梯出口右前方诊室'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/肿瘤科、泌尿外科、肾内科1.8ok6ogmn2h.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/肿瘤科、泌尿外科、肾内科2.70atr9wcwj.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/肿瘤科、泌尿外科、肾内科3.3yexq1v0p1.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至四楼，四楼电梯出口右前方诊室'
     },
     '肾内科': {
-        images: ['./images/ZhongLiu/img1.png', './images/ZhongLiu/img2.png'],
-        guide: '四楼电梯出口右前方诊室'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/肿瘤科、泌尿外科、肾内科1.8ok6ogmn2h.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/肿瘤科、泌尿外科、肾内科2.70atr9wcwj.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/肿瘤科、泌尿外科、肾内科3.3yexq1v0p1.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至四楼，四楼电梯出口右前方诊室'
     },
     '产科': {
-        images: ['./images/ChanKe/img1.png'],
-        guide: '四楼电梯出口左侧诊室'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/产科1.7ps4t7455.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/产科2.6t7lvub646.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至四楼，四楼电梯出口左侧诊室'
     },
     '针灸推拿科': {
-        images: ['./images/ZhenJiu/img1.png', './images/ZhenJiu/img2.png'],
-        guide: '三楼电梯出口右侧通道的左侧诊室'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/针灸推拿科1.70atr9y34k.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/针灸推拿科2.32igaln2hp.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/针灸推拿科3.5j4opitydt.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至三楼，三楼电梯出口右侧通道直行，靠左侧诊室'
     },
     '消化内科': {
-        images: ['./images/XiaoHua/img1.png', './images/XiaoHua/img2.png'],
-        guide: '二楼电梯出口左前方通道到底右转'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/消化内科、血液内科1.5c1gu38tt5.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/消化内科、血液内科2.4xv1380iy9.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/消化内科、血液内科3.86u4zvo0kl.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至二楼，二楼电梯出口左前方通道直行后右转，左侧诊室'
     },
     '血液内科': {
-        images: ['./images/XiaoHua/img1.png', './images/XiaoHua/img2.png'],
-        guide: '二楼电梯出口左前方通道到底右转'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/消化内科、血液内科1.5c1gu38tt5.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/消化内科、血液内科2.4xv1380iy9.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/消化内科、血液内科3.86u4zvo0kl.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至二楼，二楼电梯出口左前方通道直行后右转，左侧诊室'
     },
     '心血管内科': {
-        images: ['./images/XinXue/img1.png', './images/XinXue/img2.png'],
-        guide: '二楼电梯出口右前方诊室'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、心电图、动态心电图、动态血压1.wj1otxvvi.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、心电图、动态心电图、动态血压2.3uvbsc65cl.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至二楼，二楼电梯出口右前方诊室'
     },
     '心电图': {
-        images: ['./images/XinXue/img1.png', './images/XinXue/img2.png'],
-        guide: '二楼电梯出口右前方诊室'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、心电图、动态心电图、动态血压1.wj1otxvvi.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、心电图、动态心电图、动态血压2.3uvbsc65cl.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至二楼，二楼电梯出口右前方诊室'
     },
     '动态心电图': {
-        images: ['./images/XinXue/img1.png', './images/XinXue/img2.png'],
-        guide: '二楼电梯出口右前方诊室'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、心电图、动态心电图、动态血压1.wj1otxvvi.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、心电图、动态心电图、动态血压2.3uvbsc65cl.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至二楼，二楼电梯出口右前方诊室'
     },
     '动态血压': {
-        images: ['./images/XinXue/img1.png', './images/XinXue/img2.png'],
-        guide: '二楼电梯出口右前方诊室'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、心电图、动态心电图、动态血压1.wj1otxvvi.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/心血管内科、心电图、动态心电图、动态血压2.3uvbsc65cl.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至二楼，二楼电梯出口右前方诊室'
     },
     '呼吸与危重学科': {
-        images: ['./images/Huxi/img1.png', './images/Huxi/img2.png', './images/Huxi/img3.png'],
-        guide: '医院门诊楼正门进入后右转直行，左侧诊室'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/呼吸与危重学科、风湿免疫科、老年医学科、综合内科1.et008x9g9.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/呼吸与危重学科、风湿免疫科、老年医学科、综合内科2.6m4e0et0kf.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/呼吸与危重学科、风湿免疫科、老年医学科、综合内科3.5fl2rt43yn.webp'],
+        guide: '门诊楼正门进入后右转直行，靠左侧诊室'
     },
     '风湿免疫科': {
-        images: ['./images/Huxi/img1.png', './images/Huxi/img2.png', './images/Huxi/img3.png'],
-        guide: '医院门诊楼正门进入后右转直行，左侧诊室'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/呼吸与危重学科、风湿免疫科、老年医学科、综合内科1.et008x9g9.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/呼吸与危重学科、风湿免疫科、老年医学科、综合内科2.6m4e0et0kf.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/呼吸与危重学科、风湿免疫科、老年医学科、综合内科3.5fl2rt43yn.webp'],
+        guide: '门诊楼正门进入后右转直行，靠左侧诊室'
     },
     '老年医学科': {
-        images: ['./images/Huxi/img1.png', './images/Huxi/img2.png', './images/Huxi/img3.png'],
-        guide: '医院门诊楼正门进入后右转直行，左侧诊室'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/呼吸与危重学科、风湿免疫科、老年医学科、综合内科1.et008x9g9.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/呼吸与危重学科、风湿免疫科、老年医学科、综合内科2.6m4e0et0kf.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/呼吸与危重学科、风湿免疫科、老年医学科、综合内科3.5fl2rt43yn.webp'],
+        guide: '门诊楼正门进入后右转直行，靠左侧诊室'
     },
     '综合内科': {
-        images: ['./images/Huxi/img1.png', './images/Huxi/img2.png', './images/Huxi/img3.png'],
-        guide: '医院门诊楼正门进入后右转直行，左侧诊室'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/呼吸与危重学科、风湿免疫科、老年医学科、综合内科1.et008x9g9.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/呼吸与危重学科、风湿免疫科、老年医学科、综合内科2.6m4e0et0kf.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/呼吸与危重学科、风湿免疫科、老年医学科、综合内科3.5fl2rt43yn.webp'],
+        guide: '门诊楼正门进入后右转直行，靠左侧诊室'
     },
     '全科医学科': {
-        images: ['./images/Huxi/img1.png', './images/Huxi/img2.png', './images/Huxi/img3.png'],
-        guide: '医院门诊楼正门进入后右转直行，左侧诊室'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/呼吸与危重学科、风湿免疫科、老年医学科、综合内科1.et008x9g9.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/呼吸与危重学科、风湿免疫科、老年医学科、综合内科2.6m4e0et0kf.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/呼吸与危重学科、风湿免疫科、老年医学科、综合内科3.5fl2rt43yn.webp'],
+        guide: '门诊楼正门进入后右转直行，靠左侧诊室'
     },
     '内分泌科': {
-        images: ['./images/NeiFenMi/img1.png', './images/NeiFenMi/img2.png', './images/NeiFenMi/img3.png'],
-        guide: '四楼电梯出口右侧通道左侧诊室'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/内分泌科1.1hspb4tssl.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/内分泌科2.8z70hm7j7z.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/内分泌科3.7i0vfv3egs.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至四楼，四楼电梯出口右侧通道直行，靠右侧诊室'
     },
     '神经内科': {
-        images: ['./images/ShenJingNei/img1.png', './images/ShenJingNei/img2.png'],
-        guide: '四楼电梯出口左前方通道到底右转'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/神经内科、神经外科、脑电图、肌电图、TCD1.8dxcvben9e.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/神经内科、神经外科、脑电图、肌电图、TCD2.4jolccwpch.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/神经内科、神经外科、脑电图、肌电图、TCD3.mk9dr8dt.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至四楼，四楼电梯出口左前方通道直行后右转，左侧诊室'
     },
     '神经外科': {
-        images: ['./images/ShenJingNei/img1.png', './images/ShenJingNei/img2.png'],
-        guide: '四楼电梯出口左前方通道到底右转'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/神经内科、神经外科、脑电图、肌电图、TCD1.8dxcvben9e.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/神经内科、神经外科、脑电图、肌电图、TCD2.4jolccwpch.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/神经内科、神经外科、脑电图、肌电图、TCD3.mk9dr8dt.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至四楼，四楼电梯出口左前方通道直行后右转，左侧诊室'
     },
     '脑电图': {
-        images: ['./images/ShenJingNei/img1.png', './images/ShenJingNei/img2.png'],
-        guide: '四楼电梯出口左前方通道到底右转'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/神经内科、神经外科、脑电图、肌电图、TCD1.8dxcvben9e.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/神经内科、神经外科、脑电图、肌电图、TCD2.4jolccwpch.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/神经内科、神经外科、脑电图、肌电图、TCD3.mk9dr8dt.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至四楼，四楼电梯出口左前方通道直行后右转，左侧诊室'
     },
     '肌电图': {
-        images: ['./images/ShenJingNei/img1.png', './images/ShenJingNei/img2.png'],
-        guide: '四楼电梯出口左前方通道到底右转'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/神经内科、神经外科、脑电图、肌电图、TCD1.8dxcvben9e.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/神经内科、神经外科、脑电图、肌电图、TCD2.4jolccwpch.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/神经内科、神经外科、脑电图、肌电图、TCD3.mk9dr8dt.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至四楼，四楼电梯出口左前方通道直行后右转，左侧诊室'
     },
     'TCD': {
-        images: ['./images/ShenJingNei/img1.png', './images/ShenJingNei/img2.png'],
-        guide: '四楼电梯出口左前方通道到底右转'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/神经内科、神经外科、脑电图、肌电图、TCD1.8dxcvben9e.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/神经内科、神经外科、脑电图、肌电图、TCD2.4jolccwpch.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/神经内科、神经外科、脑电图、肌电图、TCD3.mk9dr8dt.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至四楼，四楼电梯出口左前方通道直行后右转，左侧诊室'
     },
     '检验科': {
-        images: ['./images/JianYan/img1.png', './images/JianYan/img2.png', './images/JianYan/img3.png'],
-        guide: '三楼电梯出口右侧通道到底右转'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/检验科1.3uvbsca06h.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/检验科2.1hspb4w702.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/检验科3.36228bmh6j.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/检验科4.lw7vomijk.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至三楼，三楼电梯出口右侧通道直行到底右转'
     },
     '门诊抽血室': {
-        images: ['./images/MenZhenChouXue/img1.png', './images/MenZhenChouXue/img2.png'],
-        guide: '三楼电梯出口右侧通道右侧诊室'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/门诊抽血室1.6f164zav0l.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/门诊抽血室2.8z70hmatn3.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/门诊抽血室3.7axnkfkjgd.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至三楼，三楼电梯出口右侧通道右侧诊室'
     },
     '医学影像科(X光)': {
-        images: ['./images/XGuang/img1.png', './images/XGuang/img2.png', './images/XGuang/img3.png'],
-        guide: '二楼电梯出口右侧通道到底'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/医学影像科（X光）1.5triiohqqa.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/医学影像科（X光）2.7axnkflvh7.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/医学影像科（X光）3.3uvbscc8f3.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/医学影像科（X光）4.7p43bau6bu.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至二楼，二楼电梯出口右侧通道直行到底'
     },
     '医学影像科(CT)': {
-        images: ['./images/CT/img1.png', './images/CT/img2.png'],
-        guide: '医院门诊楼正门进入直行左侧诊室'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/医学影像科（CT）1.70atra7ect.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/医学影像科（CT）2.51en0y1w13.webp'],
+        guide: '医院门诊楼正门进入后直行，靠左侧诊室'
     },
     '磁共振(MRI)': {
-        images: ['./images/MRI/img1.png', './images/MRI/img2.png', './images/MRI/img3.png', './images/MRI/img4.png', './images/MRI/img5.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/磁共振（MRI）1.6m4e0ezyt8.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/磁共振（MRI）2.77e1mpuf40.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/磁共振（MRI）3.7w7b6qhy4k.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/磁共振（MRI）4.4qrt7snj7s.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/磁共振（MRI）5.5c1gu3hzhw.webp'],
         guide: '医院门诊楼正门进入直行至后门，步出门诊楼左转进入外科楼，乘坐右手侧扶梯至二楼后左转'
     },
     '超声科(B超)': {
-        images: ['./images/BChao/img1.png', './images/BChao/img2.png', './images/BChao/img3.png'],
-        guide: '四楼电梯出口右侧通道到底'
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/超声科（B超）1.9ddg8hmwiw.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/超声科（B超）2.1vz5209644.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/超声科（B超）3.8adqxlr2nu.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/超声科（B超）4.2yyucw4zz0.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至四楼，出四楼电梯出口向右侧通道直行到底'
     },
     '挂号收费处': {
-        images: ['./images/GuaHao/img1.png', './images/GuaHao/img2.png', './images/GuaHao/img3.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/挂号收费处1.1sfj4ah0jj.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/挂号收费处2.67xy9jters.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/挂号收费处3.1lcb8uuv3t.webp'],
         guide: '医院门诊楼正门进入右侧为自助/人工挂号收费处'
     },
     '中/西医药房': {
-        images: ['./images/YaoFang/img1.png', './images/YaoFang/img2.png'],
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/药房1.5moan90pj3.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/药房2.9kgo3xbq5t.webp'],
         guide: '医院门诊楼正门进入步行，直行至通道十字交叉处右转'
+    },
+    '客服服务中心': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/客服服务中心.6iks2pccjx.webp'],
+        guide: '医院门诊楼正门右手侧'
+    },
+    '消化内镜中心': {
+        images: ['https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/消化内镜中心1.2oc0jqv4a3.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/消化内镜中心2.7ps4to8dx.webp',
+                'https://jsd.cdn.zzko.cn/gh/LZHMS/picx-images-hosting@master/Profile/DailyImage/消化内镜中心3.26lyv5tqox.webp'],
+        guide: '门诊楼正门进入直行，乘右手侧电梯至五楼，出五楼电梯出口向右侧通道直行到底'
     }
 };
 
@@ -411,12 +542,9 @@ function showDepartmentDetail(departmentName) {
             <div class="detail-header">
                 <h2 class="detail-title">${departmentName}</h2>
             </div>
-            <div class="navibubble-container">
-                    <div class="chat-bubble">
-                        <span class="assistant-icon">👤</span>
-                        <p>该科室的详细导航信息正在完善中，请咨询医院工作人员。</p>
-                    </div>
-                </div>
+            <div class="navigation-guide">
+                <h3>📍 导航指引</h3>
+                <p>该科室的详细导航信息正在完善中，请咨询医院工作人员或查看医院导视牌。</p>
             </div>
         `;
         goToPage3();
@@ -426,43 +554,23 @@ function showDepartmentDetail(departmentName) {
     // 设置标题
     document.getElementById('departmentTitle').textContent = departmentName;
     
-    // 生成轮播图HTML（如果有多张图片）
-    let imagesHTML = '';
+    // 生成步骤流HTML
+    let stepsHTML = '';
     if (detail.images && detail.images.length > 0) {
-        const carouselId = 'departmentCarousel';
-        
-        if (detail.images.length === 1) {
-            // 单张图片直接显示
-            imagesHTML = `
-                <div class="single-image-container">
-                    <img src="${detail.images[0]}" alt="${departmentName}导航图" loading="lazy">
-                </div>
-            `;
-        } else {
-            // 多张图片使用轮播图
-            const carouselItems = detail.images.map((img, index) => `
-                <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                    <img src="${img}" alt="${departmentName}导航图${index + 1}" loading="lazy">
-                </div>
-            `).join('');
-            
-            imagesHTML = `
-                <div class="step-buttons-container" id="departmentSteps"></div>
-                <div class="carousel-container">
-                    <div class="carousel-wrapper" id="${carouselId}">
-                        ${carouselItems}
+        stepsHTML = `
+            <div class="steps">
+                ${detail.images.map((img, index) => `
+                    <div class="step">
+                        <div class="step-number">${index + 1}</div>
+                        <div class="step-content">
+                            <h4 style="margin-bottom: 15px; color: var(--primary-color); font-size: 1rem;">📸 路线指引 - 第 ${index + 1} 步</h4>
+                            <img src="${img}" class="guide-image" onclick="openLightbox('${img}')" alt="${departmentName}导航 - 第${index + 1}步" style="cursor: zoom-in; width: 100%; display: block;">
+                            <p style="margin-top: 10px; font-size: 0.85rem; color: #999;">(点击图片可放大查看)</p>
+                        </div>
                     </div>
-                    <button class="carousel-btn prev" onclick="changeDepartmentCarousel(-1)">‹</button>
-                    <button class="carousel-btn next" onclick="changeDepartmentCarousel(1)">›</button>
-                </div>
-            `;
-            
-            // 初始化轮播图状态
-            carouselStates['departmentCarousel'] = {
-                currentIndex: 0,
-                totalSlides: detail.images.length
-            };
-        }
+                `).join('')}
+            </div>
+        `;
     }
     
     // 设置详情内容
@@ -471,26 +579,27 @@ function showDepartmentDetail(departmentName) {
             <h2 class="detail-title">${departmentName}</h2>
         </div>
         <div class="navigation-guide">
-            <div class="bubble-container">
-                <div class="chat-bubble">
-                    <span class="assistant-icon">👤</span>
-                    <p>${detail.guide}</p>
-                </div>
-            </div>
+            <h3>📍 总路线指引</h3>
+            <p>${detail.guide}</p>
         </div>
-        ${imagesHTML}
+        
+        ${stepsHTML ? `<h3 class="section-title" style="margin-top: 30px; margin-bottom: 20px; padding-left: 10px;">🚶 详细图文路径</h3>` : ''}
+        ${stepsHTML}
     `;
     
     // 切换到详情页
     goToPage3();
-    
-    // 初始化轮播图步骤按钮
-    if (detail.images && detail.images.length > 1) {
-        setTimeout(() => {
-            updateStepButton
-            updateCarouselIndicators('departmentCarousel');
-        }, 100);
-    }
+}
+
+// Lightbox 功能
+function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const content = lightbox.querySelector('.lightbox-content');
+    content.src = src;
+    lightbox.style.display = 'flex';
+    requestAnimationFrame(() => {
+        lightbox.classList.add('active');
+    });
 }
 
 // 科室详情页轮播图切换
@@ -553,6 +662,19 @@ function justifyGallery() {
 document.addEventListener('DOMContentLoaded', function() {
     // 设置初始页面
     goToPage1();
+    
+    // Lightbox 关闭功能
+    const lightbox = document.getElementById('lightbox');
+    if(lightbox) {
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox || e.target.classList.contains('lightbox-close')) {
+                lightbox.classList.remove('active');
+                setTimeout(() => {
+                    lightbox.style.display = 'none';
+                }, 300);
+            }
+        });
+    }
     
     // 为所有按钮添加点击反馈
     document.querySelectorAll('button').forEach(button => {
