@@ -1,3 +1,19 @@
+// 医院挂号链接数据
+const hospitalBookingLinks = {
+    '深圳市人民医院': 'https://wx.169jk.com/Reservation/MediclRegistattion/NDeptList?hospitalId=1',
+    '深圳市第二人民医院': 'https://wxis.91160.com/wxis/dep/main_dep.do?r=1768053765437&unit_id=22&classId=22&sonType=1&tagName=1',
+    '深圳市儿童医院': 'https://wxis.91160.com/wxis/dep/main.do?unit_id=111',
+    '深圳市罗湖区人民医院': 'https://nat.szlhyy.com.cn/nginx/lhyywebhospital/register/dept-select-new?orgID=1',
+    '广州中医药大学深圳医院': 'https://ihosp2.clear-sz.com/pages/register/selectDepartment/index2',
+    '香港大学深圳医院': 'https://wx.hku-szh.org/wehospital/opregister/choosedept'
+};
+
+// 轮播图状态
+const carouselStates = {
+    'idCardCarousel': { currentIndex: 0, totalSlides: 5 },
+    'socialCardCarousel': { currentIndex: 0, totalSlides: 3 }
+};
+
 // 科室导航详情数据
 const departmentDetails = {
     '肛肠外科': {
@@ -152,6 +168,138 @@ const departmentDetails = {
 
 // 当前选择的支付方式
 let selectedPaymentMethod = '';
+// 当前选择的医院ID
+let currentHospitalId = '';
+
+// 显示医院挂号链接
+function showHospitalBookingLink(hospitalName) {
+    const link = hospitalBookingLinks[hospitalName];
+    if (link) {
+        const linkContainer = document.getElementById('bookingLinkContainer');
+        const bookingLink = document.getElementById('bookingLink');
+        
+        bookingLink.href = link;
+        bookingLink.textContent = `进入${hospitalName}预约挂号`;
+        linkContainer.style.display = 'block';
+        
+        // 平滑滚动到链接区域
+        setTimeout(() => {
+            linkContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+    }
+}
+
+// 轮播图切换
+function changeCarouselSlide(carouselId, direction) {
+    const state = carouselStates[carouselId];
+    if (!state) return;
+    
+    const carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+    
+    const items = carousel.querySelectorAll('.carousel-item');
+    
+    // 移除当前活动项
+    items[state.currentIndex].classList.remove('active');
+    
+    // 计算新索引
+    state.currentIndex += direction;
+    if (state.currentIndex < 0) {
+        state.currentIndex = state.totalSlides - 1;
+    } else if (state.currentIndex >= state.totalSlides) {
+        state.currentIndex = 0;
+    }
+    
+    // 激活新项
+    items[state.currentIndex].classList.add('active');
+    
+    // 更新指示器
+    updateCarouselIndicators(carouselId);
+}
+
+// 更新轮播图指示器（已被步骤按钮替代，保留用于兼容）
+function updateCarouselIndicators(carouselId) {
+    const state = carouselStates[carouselId];
+    const indicatorsId = carouselId.replace('Carousel', 'Indicators');
+    const indicators = document.getElementById(indicatorsId);
+    
+    if (indicators) {
+        indicators.innerHTML = '';
+        for (let i = 0; i < state.totalSlides; i++) {
+            const dot = document.createElement('span');
+            dot.className = 'indicator-dot' + (i === state.currentIndex ? ' active' : '');
+            dot.onclick = () => goToCarouselSlide(carouselId, i);
+            indicators.appendChild(dot);
+        }
+    }
+    
+    // 更新步骤按钮状态
+    updateStepButtons(carouselId);
+}
+
+// 更新步骤按钮
+function updateStepButtons(carouselId) {
+    const state = carouselStates[carouselId];
+    const stepsId = carouselId.replace('Carousel', 'Steps');
+    const stepsContainer = document.getElementById(stepsId);
+    
+    if (!stepsContainer) return;
+    
+    // 清空容器
+    stepsContainer.innerHTML = '';
+    
+    // 生成步骤按钮
+    for (let i = 0; i < state.totalSlides; i++) {
+        // 添加步骤按钮
+        const button = document.createElement('button');
+        button.className = 'step-button' + (i === state.currentIndex ? ' active' : '');
+        button.textContent = i + 1;
+        button.onclick = () => goToCarouselSlide(carouselId, i);
+        button.title = `第 ${i + 1} 步`;
+        stepsContainer.appendChild(button);
+        
+        // 添加箭头（最后一个按钮后不添加）
+        if (i < state.totalSlides - 1) {
+            const arrow = document.createElement('span');
+            arrow.className = 'step-arrow';
+            arrow.textContent = '→';
+            stepsContainer.appendChild(arrow);
+        }
+    }
+}
+
+// 初始化步骤按钮
+function initStepButtons(carouselId) {
+    const state = carouselStates[carouselId];
+    if (state) {
+        updateStepButtons(carouselId);
+    }
+}
+
+// 直接跳转到指定幻灯片
+function goToCarouselSlide(carouselId, index) {
+    const state = carouselStates[carouselId];
+    if (!state) return;
+    
+    const carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+    
+    const items = carousel.querySelectorAll('.carousel-item');
+    
+    items[state.currentIndex].classList.remove('active');
+    state.currentIndex = index;
+    items[state.currentIndex].classList.add('active');
+    
+    updateCarouselIndicators(carouselId);
+}
+
+// 初始化轮播图指示器和步骤按钮
+function initCarouselIndicators() {
+    for (const carouselId in carouselStates) {
+        updateCarouselIndicators(carouselId);
+        updateStepButtons(carouselId);
+    }
+}
 
 // 页面切换函数
 function goToPage1() {
@@ -175,7 +323,11 @@ function goToPage3() {
 // 选择支付方式
 function selectPaymentMethod(method) {
     selectedPaymentMethod = method;
-    const insuranceInfo = document.getElementById('medicalInsurance');
+    
+    // 隐藏所有指引卡片
+    document.getElementById('idCardGuide').style.display = 'none';
+    document.getElementById('socialCardGuide').style.display = 'none';
+    document.getElementById('medicalInsurance').style.display = 'none';
     
     // 移除所有按钮的活动状态
     document.querySelectorAll('.btn-primary').forEach(btn => {
@@ -185,17 +337,32 @@ function selectPaymentMethod(method) {
     // 高亮选中的按钮
     event.target.closest('.btn-primary').style.opacity = '1';
     
-    // 如果选择电子医保，显示调取路径
-    if (method === '电子医保') {
-        insuranceInfo.style.display = 'block';
-        insuranceInfo.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    } else {
-        insuranceInfo.style.display = 'none';
+    // 根据选择显示对应的指引
+    let targetElement = null;
+    if (method === '身份证') {
+        targetElement = document.getElementById('idCardGuide');
+        targetElement.style.display = 'block';
+        initCarouselIndicators();
+    } else if (method === '社保卡') {
+        targetElement = document.getElementById('socialCardGuide');
+        targetElement.style.display = 'block';
+        initCarouselIndicators();
+    } else if (method === '电子医保') {
+        targetElement = document.getElementById('medicalInsurance');
+        targetElement.style.display = 'block';
+    }
+    
+    // 平滑滚动到指引区域
+    if (targetElement) {
+        setTimeout(() => {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
     }
 }
 
 // 选择医院
 function selectHospital(hospitalId) {
+    currentHospitalId = hospitalId;
     // 隐藏所有医院的科室列表
     document.querySelectorAll('.hospital-departments').forEach(dept => {
         dept.style.display = 'none';
@@ -223,7 +390,15 @@ function selectHospital(hospitalId) {
 
 // 显示科室详情
 function showDepartmentDetail(departmentName) {
-    const detail = departmentDetails[departmentName];
+    let key = departmentName;
+    if (currentHospitalId === 'hospital1') {
+        key = 'SZ2_' + departmentName;
+    } else if (currentHospitalId === 'hospital4') {
+        key = 'Luohu_' + departmentName;
+    }
+    
+    // 如果没有特定医院的科室数据，尝试使用通用名称（兼容旧数据）
+    const detail = departmentDetails[key] || departmentDetails[departmentName];
     
     if (!detail) {
         // 如果没有详情数据，显示提示信息
@@ -232,9 +407,12 @@ function showDepartmentDetail(departmentName) {
             <div class="detail-header">
                 <h2 class="detail-title">${departmentName}</h2>
             </div>
-            <div class="navigation-guide">
-                <h3>📍 导航指引</h3>
-                <p>该科室的详细导航信息正在完善中，请咨询医院工作人员。</p>
+            <div class="navibubble-container">
+                    <div class="chat-bubble">
+                        <span class="assistant-icon">👤</span>
+                        <p>该科室的详细导航信息正在完善中，请咨询医院工作人员。</p>
+                    </div>
+                </div>
             </div>
         `;
         goToPage3();
@@ -244,18 +422,43 @@ function showDepartmentDetail(departmentName) {
     // 设置标题
     document.getElementById('departmentTitle').textContent = departmentName;
     
-    // 生成图片画廊HTML
+    // 生成轮播图HTML（如果有多张图片）
     let imagesHTML = '';
     if (detail.images && detail.images.length > 0) {
-        imagesHTML = `
-            <div class="images-gallery">
-                ${detail.images.map(img => `
-                    <div class="gallery-item">
-                        <img src="${img}" alt="${departmentName}导航图" loading="lazy">
+        const carouselId = 'departmentCarousel';
+        
+        if (detail.images.length === 1) {
+            // 单张图片直接显示
+            imagesHTML = `
+                <div class="single-image-container">
+                    <img src="${detail.images[0]}" alt="${departmentName}导航图" loading="lazy">
+                </div>
+            `;
+        } else {
+            // 多张图片使用轮播图
+            const carouselItems = detail.images.map((img, index) => `
+                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                    <img src="${img}" alt="${departmentName}导航图${index + 1}" loading="lazy">
+                </div>
+            `).join('');
+            
+            imagesHTML = `
+                <div class="step-buttons-container" id="departmentSteps"></div>
+                <div class="carousel-container">
+                    <div class="carousel-wrapper" id="${carouselId}">
+                        ${carouselItems}
                     </div>
-                `).join('')}
-            </div>
-        `;
+                    <button class="carousel-btn prev" onclick="changeDepartmentCarousel(-1)">‹</button>
+                    <button class="carousel-btn next" onclick="changeDepartmentCarousel(1)">›</button>
+                </div>
+            `;
+            
+            // 初始化轮播图状态
+            carouselStates['departmentCarousel'] = {
+                currentIndex: 0,
+                totalSlides: detail.images.length
+            };
+        }
     }
     
     // 设置详情内容
@@ -264,8 +467,12 @@ function showDepartmentDetail(departmentName) {
             <h2 class="detail-title">${departmentName}</h2>
         </div>
         <div class="navigation-guide">
-            <h3>📍 导航指引</h3>
-            <p>${detail.guide}</p>
+            <div class="bubble-container">
+                <div class="chat-bubble">
+                    <span class="assistant-icon">👤</span>
+                    <p>${detail.guide}</p>
+                </div>
+            </div>
         </div>
         ${imagesHTML}
     `;
@@ -273,10 +480,18 @@ function showDepartmentDetail(departmentName) {
     // 切换到详情页
     goToPage3();
     
-    // 应用 Justified Gallery 效果
-    setTimeout(() => {
-        justifyGallery();
-    }, 100);
+    // 初始化轮播图步骤按钮
+    if (detail.images && detail.images.length > 1) {
+        setTimeout(() => {
+            updateStepButton
+            updateCarouselIndicators('departmentCarousel');
+        }, 100);
+    }
+}
+
+// 科室详情页轮播图切换
+function changeDepartmentCarousel(direction) {
+    changeCarouselSlide('departmentCarousel', direction);
 }
 
 // Justified Gallery 效果 - 自动调整图片宽度使行高统一

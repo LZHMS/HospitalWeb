@@ -5,19 +5,36 @@
 }
 
 :root {
-    --primary-color: #3b82f6;
-    --secondary-color: #10b981;
-    --accent-color: #f59e0b;
-    --danger-color: #ef4444;
-    --text-primary: #1f2937;
-    --text-secondary: #6b7280;
-    --bg-light: #f9fafb;
-    --bg-white: #ffffff;
-    --border-color: #e5e7eb;
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+    /* 莫兰迪色系配色 */
+    --morandi-blue: #92a8b3;
+    --morandi-green: #a8b5a0;
+    --morandi-pink: #c4a8a8;
+    --morandi-purple: #b5a8c4;
+    --morandi-yellow: #c4b8a8;
+    --morandi-orange: #c4aca8;
+    
+    /* 主色调 */
+    --primary-color: #7d9aab;
+    --secondary-color: #9db39d;
+    --accent-color: #b8a89d;
+    --danger-color: #c49d9d;
+    
+    /* 文字颜色 */
+    --text-primary: #5a5a5a;
+    --text-secondary: #8a8a8a;
+    
+    /* 背景颜色 */
+    --bg-light: #f5f3f0;
+    --bg-white: #faf9f7;
+    --border-color: #e0ddd8;
+    
+    /* 阴影 */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 20px 30px rgba(0, 0, 0, 0.15);
+    
+    /* 圆角 */
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 16px;
@@ -25,7 +42,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--morandi-blue) 0%, var(--morandi-purple) 100%);
     min-height: 100vh;
     color: var(--text-primary);
     line-height: 1.6;
@@ -175,6 +192,13 @@ body {
 
 .hospital-3 {
     background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.hospital-4 {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    /* 更明显的阴影和边框以突出显示 */
+    box-shadow: 0 8px 20px rgba(220, 38, 38, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .hospital-name {
@@ -366,7 +390,7 @@ body {
 
 .navigation-guide {
     background: linear-gradient(135deg, #f0fdf4, #dcfce7);
-    padding: 20px;
+    padding: 0;
     border-radius: var(--radius-md);
     border-left: 5px solid var(--secondary-color);
     margin-bottom: 30px;
@@ -385,6 +409,24 @@ body {
     font-size: 1.1rem;
     color: var(--text-primary);
     line-height: 1.8;
+}
+
+/* 单图显示容器 */
+.single-image-container {
+    margin-top: 20px;
+    text-align: center;
+    background: #f5f5f5;
+    border-radius: var(--radius-md);
+    padding: 20px;
+}
+
+.single-image-container img {
+    max-width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
 }
 
 .images-gallery {
@@ -628,4 +670,389 @@ button:focus,
 input:focus {
     outline: 3px solid rgba(59, 130, 246, 0.5);
     outline-offset: 2px;
+}
+
+/* 预约挂号板块样式 */
+.subtitle-text {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+.hospital-booking-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn-hospital-booking {
+    border: none;
+    padding: 20px;
+    border-radius: var(--radius-md);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    color: white;
+    text-align: center;
+}
+
+.btn-hospital-booking:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.hospital-booking-1 {
+    background: linear-gradient(135deg, var(--morandi-blue), #6a8999);
+}
+
+.hospital-booking-2 {
+    background: linear-gradient(135deg, var(--morandi-green), #89a37e);
+}
+
+.hospital-booking-3 {
+    background: linear-gradient(135deg, var(--morandi-pink), #b39090);
+}
+
+.hospital-booking-4 {
+    background: linear-gradient(135deg, var(--morandi-purple), #9e8fb3);
+}
+
+.hospital-booking-5 {
+    background: linear-gradient(135deg, var(--morandi-yellow), #b3a890);
+}
+
+.hospital-booking-6 {
+    background: linear-gradient(135deg, var(--morandi-orange), #b39890);
+}
+
+.booking-link-container {
+    margin-top: 25px;
+    padding: 20px;
+    background: linear-gradient(135deg, #e8f3f8, #f0f8f0);
+    border-radius: var(--radius-md);
+    border-left: 5px solid var(--primary-color);
+}
+
+.link-tip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.assistant-icon {
+    font-size: 1.5rem;
+}
+
+.link-tip p {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1.05rem;
+}
+
+.btn-booking-link {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, var(--primary-color), #6a8999);
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: var(--radius-sm);
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-booking-link:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* 聊天气泡样式 - 微信风格 */
+.chat-bubble {
+    display: inline-block;
+    max-width: 80%;
+    background: #95ec69;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-left: 50px;
+}
+
+.chat-bubble::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 12px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid #95ec69;
+}
+
+.chat-bubble .assistant-icon {
+    position: absolute;
+    left: -45px;
+    top: 0;
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chat-bubble p {
+    margin: 0;
+    color: #333;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* 轮播图样式 - 带步骤按钮 */
+.carousel-container {
+    position: relative;
+    margin-top: 20px;
+}
+
+.carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background: #f5f5f5;
+}
+
+.carousel-item {
+    display: none;
+}
+
+.carousel-item.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+    display: block;
+}
+
+/* 步骤按钮容器 */
+.step-buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    background: white;
+    flex-wrap: wrap;
+}
+
+.step-button {
+    position: relative;
+    min-width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    background: white;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.step-button:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-md);
+}
+
+.step-button.active {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.15);
+    box-shadow: var(--shadow-lg);
+}
+
+.step-arrow {
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    margin: 0 5px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: white;
+    box-shadow: var(--shadow-lg);
+}
+
+.carousel-btn.prev {
+    left: 15px;
+}
+
+.carousel-btn.next {
+    right: 15px;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.indicator-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator-dot.active {
+    background: var(--primary-color);
+    width: 30px;
+    border-radius: 5px;
+}
+
+.indicator-dot:hover {
+    background: var(--text-secondary);
+}
+
+/* 指引卡片样式 */
+.guide-card {
+    background: var(--bg-white);
+}
+
+.guide-title {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* 小程序链接容器 */
+.miniprogram-link-container {
+    background: #f0f8ff;
+    padding: 20px;
+    border-radius: var(--radius-md);
+    margin-top: 15px;
+    border: 2px dashed var(--primary-color);
+}
+
+.link-instruction {
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.miniprogram-code {
+    background: white;
+    padding: 15px;
+    border-radius: var(--radius-sm);
+    text-align: center;
+    font-family: monospace;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    word-break: break-all;
+}
+
+/* 温馨提示列表 */
+.tip-list {
+    margin: 0;
+    padding-left: 25px;
+}
+
+.tip-list li {
+   气泡容器 */
+.bubble-container {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .hospital-booking-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1.5rem;
+    }
+    
+    .carousel-btn.prev {
+        left: 10px;
+    }
+    
+    .carousel-btn.next {
+        right: 10px;
+    }
+    
+    .chat-bubble {
+        max-width: 70%;
+        margin-left: 50px;
+    }
+    
+    .step-buttons-container {
+        padding: 15px 10px;
+    }
+    
+    .step-button {
+        min-width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+    
+    .step-arrow {
+        font-size: 1.2rem;
+        margin: 0 2.prev {
+        left: 10px;
+    }
+    
+    .carousel-btn.next {
+        right: 10px;
+    }
 }
